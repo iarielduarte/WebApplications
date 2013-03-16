@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery - Efectos</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+//Ejemplo 1: Mostrar y ocultar
+$(document).ready(function() {
+    $("#mostrar").click(mostrar);
+	$("#ocultar").click(ocultar);
+	$("#ocultar2").click(ocultarDegradado);
+	$("#mostrar2").click(mostrarDegradado);
+	$("#invisible").click(invisible);
+	$("#visible").click(visible);
+	$("#toggle").click(toggle);
+	$("#slide").click(slideToggle);
+	$("#animar").click(animar);
+});
+
+function animar(){
+	var x = $("#objetivo");
+	x.animate({height:20},"fast");
+	x.animate({width:300},1000);
+	x.animate({height:100},"normal");
+	x.animate({width:1000},"slow");
+	x.animate({height:1000},"fast");
+}
+
+function mostrar(){
+	$("#objetivo").show("slow");
+}
+
+function ocultar(){
+	$("#objetivo").hide("fast");
+}
+
+function ocultarDegradado(){
+	$("#objetivo").fadeOut("slow");
+}
+
+function mostrarDegradado(){
+	$("#objetivo").fadeIn("slow");
+}
+
+function invisible(){
+	$("#objetivo").fadeTo("slow",0.1);
+}
+
+function visible(){
+	$("#objetivo").fadeTo("slow",0.5);
+}
+
+function toggle(){
+	$("#objetivo").toggle("fast");
+}
+
+function slideToggle(){
+	$("#objetivo").slideToggle("slow");
+}
+
+</script>
+<style type="text/css">
+#objetivo {
+	background:#FF6;
+	width:300px; 
+	height:100px; 
+	border:3px solid #00F;
+}
+
+</style>
+</head>
+
+<body>
+    <h1>Ejemplo de Efectos con jQuery</h1>
+    <h4>Ejemplo 1: Ocultar y Mostrar</h4>
+   	<input type="button" value="Motrar" id="mostrar">
+    <input type="button" value="Ocultar" id="ocultar">
+    <input type="button" value="Motrar con Degradado" id="mostrar2">
+    <input type="button" value="Ocultar con Degradado" id="ocultar2">
+    <input type="button" value="Invisible" id="invisible">
+    <input type="button" value="Visible" id="visible">
+    <input type="button" value="Toggle" id="toggle">
+    <input type="button" value="Slide Toggle" id="slide">
+    <input type="button" value="Animar" id="animar">
+    <br>
+	<br>
+    <div id="objetivo">
+        <p>
+        Efecto de ocultar y mostrar
+        </p>
+	</div>
+    
+    
+</body>
+</html>

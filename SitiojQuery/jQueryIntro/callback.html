@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery - Callback</title>
+<script type="text/javascript" src="jquery.js"></script>
+
+<script type="text/javascript">
+//Ejemplo 1
+ $(document).ready(function() {
+    $("#escondeme").click(esconder);
+});
+
+function esconder(){
+	$("#noticia").hide(5000, function(){alert("Soy un Callbarck: EL cuadrado ya no existe");});
+	
+}
+</script>
+
+<style type="text/css">
+#noticia {
+width:100px;
+height:100px;
+border:1px solid black;
+background-color:#FFFF66
+</style>
+
+</head>
+
+<body>
+<h1>Callback JQuery</h1>
+<br>
+<h4>Ejemplo 1: Callback </h4>
+
+<input type="button" id="escondeme" value="Escondeme">
+<br>
+<br>
+<div id="noticia">
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

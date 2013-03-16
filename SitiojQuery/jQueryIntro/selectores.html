@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery - Selectores</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="codigo.js"></script>
+
+<script type="text/javascript">
+	//Ejemplo 2: selector por class
+	var x;
+	x=$(document);
+	x.ready(resaltar);
+	
+	function resaltar(){
+		var x;
+		x=$("#boton");
+		x.click(muestrame);
+		
+		function muestrame(){
+			var x;
+			x=$(".primario");
+			x.css("background-color","yellow");
+		}
+	}
+	
+	//Ejemplo 3: selector por tag html
+	var x;
+	x=$(document);
+	x.ready(function() {
+        var x;
+		x=$("h1");
+		x.click(presionar);
+    });
+	
+	function presionar(){
+	var x;
+	x=$(this);
+	x.css("font-size","12px");
+	x.css("color","#00F");
+	}
+	
+	//Ejemplo 4: selector por atributo
+	var x;
+	x = $(document);
+	x.ready(function() {
+        var x;
+		x = $("#revelar");
+		x.click(mostrar);
+    });
+	
+	function mostrar(){
+		$("[href=#]").css("background-color","#666");
+		$("[href$='.jpg']").css("background","yellow");//buscar el ultimo
+		$("[href^='mailto:']").css("background","#090");//busca el primero
+		$("li:first").css("background","#F00");//primer atributo li
+	}
+</script>
+</head>
+
+<body>
+
+<h1>Ejemplo de selectores</h1>
+<br>
+<h1>Ejemplo 1: Selector por ID</h1>
+<br>
+<div id="hola">
+	Hola mundo de jQuery
+</div>
+<br>
+<h1>Ejemplo 2: Selector por Class</h1>
+<br>
+<input type="button" value="Muestrame los colores primario" id="boton">
+<br>
+<span class="primario">Azul</span>,
+Celeste,
+Naranja,
+<span class="primario">Verde</span>,
+Gris
+<span class="primario">Amarillo</span>
+<br>
+<br>
+<h1>Ejemplo 3: Selector por tag HTML</h1>
+<p>Click a los titulos para cambiar tu tama&ntilde;o</p>
+<h1>Ejemplo de selectores por tag HTML</h1>
+<p>Click a los titulos para cambiar tu tama&ntilde;o</p>
+<h1>Ejemplo de selectores por tag HTML</h1>
+<p>Click a los titulos para cambiar tu tama&ntilde;o</p>
+
+<h1>Ejemplo 4: Selector por XPATH</h1>
+<br>
+<input type="button" id="revelar" value="Color por seleccion">
+<br>
+<a href="mailto:ariel@gamil.com">Enlace Email</a><br>
+<a href="imagen.jpg">Imagen JPG</a><br>
+<a href="imagen.png">Imagen PNG</a><br>
+<a href="#">Enlace href#</a><br>
+<a href="#">Enlace href#</a><br>
+<ul>
+	<li>Enlace 1: Verde</li>
+    <li>Enlace 2: Amarillo</li>
+    <li>Enlace 3: Celeste</li>
+    <li>Enlace 4: Gris</li>
+    <li>Enlace 5: Gris</li>
+</ul>
+</body>
+</html>

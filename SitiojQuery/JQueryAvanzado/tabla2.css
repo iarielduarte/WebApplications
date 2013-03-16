@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+.odd {
+background-color: #ffc; 
+}
+.even {
+background-color: #cef; 
+}
+
+.destacado {font-weight:bold; color: #f00;}
+
+.cabecera-tabla {
+background-color: #D5DA0E; 
+}
+

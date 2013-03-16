@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery - Eventos del Mouse</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+//Ejemplo 1:
+$(document).ready(function() {
+  //$("#hola").mouseover(entraPuntero)
+  //$("#hola").mouseout(salePuntero);
+	
+	//Tambien pode usar el evento "hover"
+	$("#hola").hover(entraPuntero,salePuntero);
+});
+
+function entraPuntero(){
+	$(this).css("background-color","#F63");
+}
+
+function salePuntero(){
+	$(this).css("background-color","#FF6");
+}
+
+//Ejemplo 2: MouseMove
+$(document).ready(function() {
+    $(document).mousemove(moverRaton);
+});
+
+function moverRaton(event){
+	$("#x").text("Cordenada X: "+event.clientX );	
+	$("#y").text("Cordenada Y: "+event.clientY );
+}
+
+//Ejemplo 3: MouseUp y MouseDown
+$(document).ready(function() {
+    $("#accion").mousedown(presionar);
+	$("#accion").mouseup(soltar);
+	$("#accion").dblclick(pulsa);
+});
+
+function presionar(){
+	$(this).css("background-color","#F00");
+}
+
+function soltar(){
+	$(this).css("background-color","#00F");
+}
+
+function pulsa(){
+	alert("Has pulsado doble clic!!");
+}
+//Ejemplo 4: Focus
+$(document).ready(function() {
+    $("#usuario").focus(enfocado);
+	$("#usuario").blur(desenfocado);
+});
+
+function enfocado(){$("#usuario").attr("value","Ariel Duarte")}
+function desenfocado(){$("#usuario").attr("value","Eres genial!!!")}
+</script>
+</head>
+
+<body>
+    <h1>Ejemplo de Eventos del Mouse</h1>
+    <h4>Ejemplo 1: Eventos de MouseOver , MouseOut y Hover</h4>
+    <div id="hola" style="background:#FF6; width:300px; height:100px; border-color:#0000CC">
+        <p>
+        Ejemplos de Eventos de MouseOver y MouseOut pero podemos simplificar los dos con el evento Hover
+        </p>
+	</div>
+    
+    <h4>Ejemplo 2: MouseMove</h4>
+    <div id="x">x</div>
+    <div id="y">y</div>
+    
+    <h4>Ejemplo 3: MouseUp , MouseDown y dblClick</h4>
+    <div id="accion">Pulsar doble clic</div>
+    
+     <h4>Ejemplo 4: Focus y Blur</h4>
+     <form>
+     	<input id="usuario" type="text" placeholder="Nombre de usuario"><input type="submit">
+     </form>
+</body>
+</html>

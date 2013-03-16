@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery - AJAX</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+//Ejemplo 1: metodo load
+$(document).ready(function(e) {
+    $("a").click(hablameDelColor);
+});
+function hablameDelColor(){
+	var pagina = $(this).attr("href");
+	$("#hablame").load(pagina);
+	return false;
+}
+
+$(document).ready(function() {
+    $("#multiplicar").click(calcular);
+});
+
+function calcular(){
+	var x = $("#caja").val();
+	$.get("calcula.php",{numero:x},recibir);
+	return false;
+}
+
+function recibir(datos){
+	$("#resultado").text("El resultado es: "+datos);
+}
+
+//Ejemplo 3: Metodo Ajax Completo
+$(document).ready(function() {
+    $("#enviar").click(peticion);
+});
+
+function peticion(){
+	var v = $("#anio").val();
+	alert(v)
+	$.ajax({
+		async:true,
+		type:"POST",
+		dataType:"html",
+		contentType:"application/x-www-form-urlencoded",
+		url:"ejemplo3.php",
+		data:"anio="+v,
+		beforeSend:inicioEnvio,
+		success:llegada,
+		timeout:4000,
+		error:problemas
+		});
+		return false;
+}
+
+function inicioEnvio(){
+	$("#respuesta").html("Cargando...");
+}
+
+function llegada(datos){
+	$("#respuesta").text(datos);
+}
+
+function problemas(){
+	$("#respuesta").text("Problemas en el servidor....");
+}
+
+
+</script>
+</head>
+
+<body>
+<h1>Utilizando AJAX con jQuery V.13</h1>
+<h4>Ejemplo 1: Metodo Load con Ajax</h4>
+<br>
+<br>
+<a href="colores.php?color=verde">Hablame del verde</a>
+<a href="colores.php?color=azul">Hablame del azul</a>
+<a href="colores.php?color=rojo">Hablame del rojo</a>
+<br>
+<br>
+<div id="hablame"></div>
+
+<h4>Ejemplo 2: Metodo Get y Post en Ajax</h4>
+<form action="calcula.php" method="get">
+Ingrese el Numero a Multiplicar por : 
+
+<input id="caja" type="text" >
+<br>
+<input type="button" value="Multiplicar" id="multiplicar">
+</form>
+<div id="resultado"></div>
+
+<h4>Ejemplo 3: Metodo Ajax Completo</h4>
+Ingrese el a&ntilde;o actual : 
+<input id="anio" type="text" >
+<input type="button" value="Te digo cual es el siguiente?" id="enviar">
+<div id="respuesta"></div>
+</body>
+</html>

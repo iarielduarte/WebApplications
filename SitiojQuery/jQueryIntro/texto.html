@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery - Texto</title>
+<script type="text/javascript" src="jquery.js"></script>
+
+<script type="text/javascript">
+//Ejemplo 1
+ $(document).ready(function() {
+    $("#boton1").click(leer);
+	$("#boton2").click(escribir);
+	$("#boton10").click(adjuntarFinal);
+	$("#boton11").click(adjuntarInicio);
+	$("#boton12").click(before);
+	$("#boton13").click(after);
+});
+
+function leer(){
+	var x = $("p");
+	alert(x.text());
+}
+
+function escribir(){
+	var x = $("p");
+	x.text("Nuevo texto introducido");
+}
+
+function adjuntarInicio(){
+	var x = $("p");
+	x.prepend("nuevo texto a&ntilde;adido al principio");
+}
+
+function adjuntarFinal(){
+	var x = $("p");
+	x.append("nuevo texto a&ntilde;adido al final");
+}
+
+function before(){
+	$("p").before("---------------------------------------------------");
+}
+
+function after(){
+	$("p").after("---------------------------------------------------");
+}
+//Ejemplo 2
+$(document).ready(function() {
+    $("#boton4").click(leerPropiedad);
+	$("#boton5").click(escribirPropiedad);
+	$("#boton6").click(borrarPropiedad);
+});
+
+function leerPropiedad(){
+	var x = $("table");
+	alert("El valor de la propiedad border de la tabla es: "+ x.attr("border"));
+}
+
+function escribirPropiedad(){
+	$("table").attr("border","4");
+}
+
+function borrarPropiedad(){
+	$("table").removeAttr("border");
+}
+
+//Ejemplo 3
+$(document).ready(function() {
+    $("#boton7").click(agregarClase);
+	$("#boton8").click(quitarClase);
+});
+
+function agregarClase(){
+	$("#articulo").addClass("noticia");
+}
+
+function quitarClase(){
+	$("#articulo").removeClass("noticia");
+}
+
+//Ejemplo 4
+$(document).ready(function() {
+    $("#boton9").click(agregarHTML);
+});
+
+function agregarHTML(){
+	$("#formulario").html('<form><input type="text"/><input type="submit"/> </form>')
+}
+</script>
+
+<style type="text/css">
+.noticia {
+width:800px;
+height:50px;
+border:1 solid black;
+font-family:Arial, Helvetica, sans-serif;
+font-size:10px;
+color:#FF0000;
+background-color:rgb(200,200,200);
+}
+</style>
+
+</head>
+
+<body>
+<h1>Ejemplo de Textos con JQuery</h1>
+<br>
+<h4>Ejemplo 1: Copiando y sobreescribiendo y a&ntilde;adiendo texto</h4>
+<input type="button" id="boton1" value="Leer Texto">
+<input type="button" id="boton2" value="Escribir Texto">
+<input type="button" id="boton10" value="A&ntilde;adir Texto al final">
+<input type="button" id="boton11" value="A&ntilde;adir Texto al inicio">
+<input type="button" id="boton12" value="Before">
+<input type="button" id="boton13" value="After">
+<br>
+<br>
+<div style="background:#FF6; width:300px; height:100px; border-color:#0000CC">
+<p>
+Este es el texto antiguo
+</p>
+</div>
+
+<h4>Ejemplo 2: Cambiando propiedades de los atributos</h4>
+<input type="button" id="boton4" value="Leer">
+<input type="button" id="boton5" value="Escribir">
+<input type="button" id="boton6" value="Borrar">
+<br>
+<br>
+
+<table border="1">
+<th>Columna 1</th>
+<th>Columna 2</th>
+<tr>
+	<td>1</td>
+    <td>2</td>
+</tr>
+<tr>
+	<td>3</td>
+    <td>4</td>
+</tr>
+</table>
+
+<h4>Ejemplo 3: A&ntilde;adir y quitar clase CSS</h4>
+<input type="button" id="boton7" value="Agregar">
+<input type="button" id="boton8" value="Quitar">
+
+<div id="articulo">
+La web 2.0 está entre nosotros. Internet es ahora un lugar donde los usuarios no solo reciben, sino que interactuan con la información. En nuestro dia a dia usamos aplicaciones web dinámicas en las que la información fluye bidireccionalmente con la información, actualizándose constantemente y adaptandose a nosotros. Aplicaciones tales como gestores de webmail, tiendas online, publicaciones electrónicas y gestores de contenido son solo algunos de estos ejemplos.
+</div>
+
+<h4>Ejemplo 4: A&ntilde;adir HTML</h4>
+<input type="button" id="boton9" value="Agregar Formulario">
+<br>
+<br>
+<p>Aqui ira el formulario HTML</p>
+
+<div id="formulario">
+
+</div>
+
+
+</body>
+</html>
