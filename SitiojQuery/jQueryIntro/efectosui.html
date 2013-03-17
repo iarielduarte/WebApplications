@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery UI</title>
+<link type="text/css" href="css/ui-lightness/jquery-ui-1.10.2.custom.css" rel="stylesheet"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript">
+//Ejemplo 1: Efectos 
+$(document).ready(function(e) {
+    $("#blind").click(function(){$("#efectos").effect("blind")});
+	$("#bounce").click(function(){$("#efectos").effect("bounce")});
+	$("#shake").click(function(){$("#efectos").effect("shake")});
+	$("#clip").click(function(){$("#efectos").effect("clip")});
+	$("#drop").click(function(){$("#efectos").effect("drop")});
+	$("#explode").click(function(){$("#efectos").effect("explode")});
+	$("#puff").click(function(){$("#efectos").effect("puff")});
+	$("#fade").click(function(){$("#efectos").effect("fade")});
+	$("#fold").click(function(){$("#efectos").effect("fold")});
+	$("input").button();
+});
+</script>
+
+<style type="text/css">
+body{
+		font: 62.5% "Trebuchet MS", sans-serif;
+		margin: 50px;
+	}
+#efectos {
+	text-align:center;
+	width:300px;
+	height:300px;
+	border:1px solid grey;
+	position:relative;
+	background:#CCC
+}
+</style>
+
+</head>
+
+<body>
+<h1>Ejemplos de Efectos con jQuery UI</h1>
+
+<input type="button" value="Blind" id="blind">
+<input type="button" value="Bounce" id="bounce">
+<input type="button" value="Shake" id="shake">
+<input type="button" value="Clip" id="clip">
+<input type="button" value="Drop" id="drop">
+<input type="button" value="Explode" id="explode">
+<input type="button" value="Fade" id="fade">
+<input type="button" value="Fold" id="fold">
+
+<br>
+<br>
+<div id="efectos">
+	<h3>Titulo</h3>
+    <p>Texto</p>
+</div>
+
+</body>
+</html>

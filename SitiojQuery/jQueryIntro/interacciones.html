@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery UI</title>
+<link type="text/css" href="css/ui-lightness/jquery-ui-1.10.2.custom.css" rel="stylesheet"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript">
+//Ejemplo 1 y 2
+$(document).ready(function() {
+    $("#mueve").draggable();
+	$("#sueltame").droppable({drop:soltado});
+});
+function soltado(){
+	$(this).css("background-color","#0F0");
+	$("#mueve").css("background-color","#00F");
+}
+
+//Ejemplo 3 : Resizable
+$(document).ready(function() {
+    $("#grande").resizable();
+});
+
+//Ejemplo 4 : Seleccionable y Sortable
+$(document).ready(function() {
+	$("#seleccionable").selectable();
+});
+
+//Ejemplo 5 : Sortable
+$(document).ready(function() {
+   	$("#cargo").sortable();
+	
+});
+</script>
+<style type="text/css">
+ul{list-style-type:none;}
+li{border:1px solid grey; width:300px; height:30px;}
+ul .ui-selecting{background:#92d1f2}
+ul .ui-selected{background:#d1f291}
+#mueve {width:100px; height:100px; border:1px solid black;}
+#sueltame {width:300px; height:300px; border:1px solid black; background-color:#FFCC66; margin:10px;}
+#grande {width:200px; height:200px; border:1px solid black; background-color:#09F; margin:10px;}
+</style>
+</head>
+
+<body>
+<h1>Ejemplos de Interfaces con jQuery UI</h1>
+<br>
+<h4>Ejemplo 1: Droppable</h4>
+<div id="mueve">Mueveme</div>
+<br>
+<h4>Ejemplo 2: Draggable</h4>
+<div id="sueltame">Suelta algo encima mio</div>
+
+<h4>Ejemplo 3: Resizable</h4>
+<div id="grande">
+<h3>Titulo</h3>
+<p>Esto es un div con resizable.</p>
+</div>
+
+<h4>Ejemplo 4: Selectable </h4>
+<ul id="seleccionable">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+   
+</ul>
+
+<h4>Ejemplo 5: Sortable</h4>
+<ul id="cargo">
+    <li>Gerente</li>
+    <li>Jefe</li>
+    <li>Profesional</li>
+    <li>Empleado</li>
+    <li>Pasante</li>
+    <li>Programador</li>
+</ul>
+</body>
+</html>

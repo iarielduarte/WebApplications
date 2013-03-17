@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery UI</title>
+<link type="text/css" href="css/ui-lightness/jquery-ui-1.10.2.custom.css" rel="stylesheet"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript">
+//Ejemplo 1: Acordeon
+$(document).ready(function() {
+    $("#acordeon").accordion();
+});
+
+//Ejemplo 2: Autocompletar
+$(document).ready(function() {
+    var posibilidades = [
+	 "Google",
+	 "HTC", 
+	 "Sony", 
+	 "Dell", 
+	 "Intel", 
+	 "Motorola", 
+	 "Qualcomm", 
+	 "Texas Instruments", 
+	 "Samsung Electronics", 
+	 "LG Electronics", 
+	 "T-Mobile", 
+	 "Sprint Nextel", 
+	 "Nvidia", 
+	 "Wind River Systems"];
+	 $("#completar").autocomplete({source: posibilidades});
+});
+//Ejemplo 3: Botones
+$(document).ready(function() {
+    $("#boton").button();
+	 $("a").button();
+	  $("button").button();
+});
+
+//Ejemplo 4: Calendario
+$(document).ready(function(e) {
+    $("#calendario").datepicker();
+});
+
+//Ejemplo 5: Dialogo
+$(document).ready(function(e) {
+	$("#mensaje").click(dialogo);
+    
+});
+function dialogo(){
+	$("#dialogo").dialog();
+}
+
+//Ejemplo 6: Barra de progreso
+$(document).ready(function() {
+    $("#barra").progressbar({value:75});
+});
+
+//Ejemplo 7: Slider
+$(document).ready(function(e) {
+    $("#slide").slider();
+});
+
+//Ejemplo 8: Pestañas
+$(document).ready(function(e) {
+    $("#pestanas").tabs();
+});
+</script>
+
+<style type="text/css">
+body{
+		font: 62.5% "Trebuchet MS", sans-serif;
+		margin: 50px;
+	}
+</style>
+
+</head>
+
+<body>
+<h1>Ejemplos de Widgets con jQuery UI</h1>
+<h4>Ejemplo 1: Acordeon</h4>
+<div id="acordeon">
+	<h3>Frase 1</h3>
+    <div>No es lo mismo estar dormido que estar durmiendo, porque no es lo mismo estar jodido que estar jodiendo.</div>
+    
+    <h3>Frase 2</h3>
+    <div><p>Gracias Facebook por enseñarme el espejo del cuarto de baño de todos mis amigos!</p>
+    </div>
+    
+    <h3>Frase 3</h3>
+    <div><p>No me agregues al Facebook si lo primero que vas a hacer es preguntarme: ¿Quién eres?</p></div>
+</div>
+<h4>Ejemplo 2: Autocompletar</h4>
+Open Handset Alliance : <input type="text" id="completar" placeholder="Ingrese nombre IT..">
+<h4>Ejemplo 3: Botones</h4>
+<input type="button" value="Soy Input" id="boton">
+<a href="#">Soy Enlace</a>
+<button>Soy Etiqueta Boton</button>
+
+<h4>Ejemplo 4: Calendario</h4>
+<input type="text" id="calendario">
+
+<h4>Ejemplo 5: Dialogo</h4>
+<input type="button" id="mensaje" value="Mensaje">
+
+<div id="dialogo">The Open Handset Alliance (OHA) is a consortium of firms to develop open standards for mobile devices</div>
+
+<h4>Ejemplo 6: Barra de progreso</h4>
+<div id="barra"></div>
+
+<h4>Ejemplo 7: Slider</h4>
+<div id="slide"></div>
+
+<h4>Ejemplo 8: Pesta&ntilde;as o Tabs</h4>
+<div id="pestanas">
+<ul>
+	<li><a href="#pes1">Products</a></li>
+    <li><a href="#pes2">Members</a></li>
+    <li><a href="#pes3">See also</a></li>
+</ul>
+
+<div id="pes1">
+At the same time as the announcement of the formation of the Open Handset Alliance on November 5, 2007, the OHA also unveiled Android, an open source mobile phone platform based on the Linux kernel. An early look at the SDK was released to developers on 12 November 2007.
+
+The first commercially available phone running Android was the HTC Dream (also known as the T-Mobile G1). It was approved by the Federal Communications Commission (FCC) on 18 August 2008, and became available on 22 October.
+</div>
+<div id="pes2">
+The members of the Open Handset Alliance are:
+</div>
+    <div id="pes3">
+    <ul>
+        <li>Google Nexus</li>
+        <li>Symbian Foundation</li>
+        <li>LiMo Foundation</li>
+        <li>Open Mobile Alliance</li>
+    </ul>
+    </div>
+</div>
+</body>
+</html>
