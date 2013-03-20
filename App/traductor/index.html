@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Traductor V1</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(event) {
+    var x=$("#input");
+	x.keypress(tecla);
+	
+	$("#input").keypress(function(e) {
+        if ( e.which == 13 ) {
+		alert("Solucionar este problema");
+	 }
+    });
+	 
+});
+
+
+function tecla(){
+	$(".resultado").hide();
+	$.ajax({
+		type:'POST',
+		url:$("form").attr('action'),
+		data: $("form").serialize(),
+		success: function(data){
+			$(".resultado").fadeIn("slow");
+			$(".resultado").html(data);
+		}
+	})
+	var x = $("#input").attr("value");
+	if(isEmpty(x)){
+		alert("Solucionar este problema");
+	}
+}
+</script>
+<link href="css/estilo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="contenedor">
+    <form action="php/busca.php" method="post">
+        <input type="text" name="termino" placeholder="Introduce un termino" id="input">
+     </form>
+     <br>
+	<br>
+	<div class="resultado">
+    	
+    </div>
+</div>
+</body>
+</html>

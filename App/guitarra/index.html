@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<link href="css/estilo.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#E").click(acordeE);
+	$("#F").click(acordeF);
+	$("#G").click(acordeG);
+});
+
+/*Acorde E*/
+function acordeE(){
+	var x = $("#sexta");
+		x.mouseover(s6E);
+		x.mouseout(s6NO);
+	var x = $("#quinta");
+		x.mouseover(s5B);
+		x.mouseout(s5NO);
+	var x = $("#cuarta");
+		x.mouseover(s4E);
+		x.mouseout(s4NO);
+	var x = $("#tercera");
+		x.mouseover(s3Gs);
+		x.mouseout(s3NO);
+	var x = $("#segunda");
+		x.mouseover(s2B);
+		x.mouseout(s2NO);
+	var x = $("#primera");
+		x.mouseover(s1E);
+		x.mouseout(s1NO);
+}
+/*Funciones de Acorde E*/
+function s6E() {
+	$("#sonidosexta").html('<audio src="sonido/6E.ogg" autoplay="autoplay"></audio>');
+	$(this).css("background","url(img/string2.jpg)");
+}
+
+function s6NO() {
+	$(this).css("background","url(img/string.jpg)");
+}
+
+function s5B() {
+	$("#sonidoquinta").html('<audio src="sonido/5B.ogg" autoplay="autoplay"></audio>');
+	$(this).css("background","url(img/string2.jpg)");
+}
+
+function s5NO() {
+	$(this).css("background","url(img/string.jpg)");
+}
+
+function s4E() {
+	$("#sonidocuarta").html('<audio src="sonido/4E.ogg" autoplay="autoplay"></audio>');
+	$(this).css("background","url(img/string2.jpg)");
+}
+
+function s4NO() {
+	$(this).css("background","url(img/string.jpg)");
+}
+
+function s3Gs() {
+	$("#sonidotercera").html('<audio src="sonido/3Gs.ogg" autoplay="autoplay"></audio>');
+	$(this).css("background","url(img/string2.jpg)");
+}
+
+function s3NO() {
+	$(this).css("background","url(img/string.jpg)");
+}
+
+function s2B() {
+	$("#sonidosegunda").html('<audio src="sonido/2B.ogg" autoplay="autoplay"></audio>');
+	$(this).css("background","url(img/string2.jpg)");
+}
+
+function s2NO() {
+	$(this).css("background","url(img/string.jpg)");
+}
+
+function s1E() {
+	$("#sonidoprima").html('<audio src="sonido/1E.ogg" autoplay="autoplay"></audio>');
+	$(this).css("background","url(img/string2.jpg)");
+}
+
+function s1NO() {
+	$(this).css("background","url(img/string.jpg)");
+}
+
+/*Acorde F*/
+function acordeF(){
+	
+}
+
+/*Acorde G*/
+function acordeG(){
+
+}
+</script>
+
+</head>
+
+<body>
+<input type="button" value="E" id="E">
+<input type="button" value="F" id="F">
+<input type="button" value="G" id="G">
+
+    <div style="clear:both"></div>
+        <div id="tablatura">
+        <div class="espacio"></div>
+        <div class="cuerda" id="sexta"></div>
+        <div class="espacio"></div>
+        <div class="cuerda" id="quinta"></div>
+        <div class="espacio"></div>
+        <div class="cuerda" id="cuarta"></div>
+        <div class="espacio"></div>
+        <div class="cuerda" id="tercera"></div>
+        <div class="espacio"></div>
+        <div class="cuerda" id="segunda"></div>
+        <div class="espacio"></div>
+        <div class="cuerda" id="primera"></div>
+        <div class="espacio"></div>
+    </div>
+    
+    <div id="sonidos">
+    	<div id="sonidoprima"></div>
+        <div id="sonidosegunda"></div>
+        <div id="sonidotercera"></div>
+        <div id="sonidocuarta"></div>
+        <div id="sonidoquinta"></div>
+        <div id="sonidosexta"></div>
+    </div>
+</body>
+</html>
