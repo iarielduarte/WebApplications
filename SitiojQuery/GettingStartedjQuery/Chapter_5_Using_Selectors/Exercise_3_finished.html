@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lesson 2: Selecting Elements</title>
+<style>
+.red-BG {
+			background-color:red;
+}
+
+.red-Text {
+			color:red;
+}
+.blue-BG {
+			background-color:blue;
+}
+
+.blue-Text {
+			color:blue;
+}
+
+</style>
+
+<script type="text/javascript" src="../scripts/jquery_1_6_1.js"></script>
+<script type="text/javascript">
+$(function(){
+  $("input#selectAttribute").click(function(){
+    $("section[contenteditable]").css("background-color","yellow");
+  });
+});
+
+$(function(){
+  $("input#selectByLanguage").click(function(){
+    $("p[lang=es]").css("background-color","yellow");
+  });
+});
+
+$(function(){
+  $("input#selectRed").click(function(){
+    $("[class|=red]").css("background-color","yellow");
+	//or 
+	//$("[class^=red]").css("background-color","yellow");
+	//or
+	//$("*[class*=red]").css("background-color","yellow");
+  });
+});
+
+$(function(){
+  $("input#selectPDF").click(function(){
+    $("a[href$='.pdf']").css("background-color","yellow");
+  });
+});
+
+$(function(){
+  $("input#containsSelect").click(function(){
+    $("*[name*='select']").css("background-color","yellow");
+  });
+});
+
+</script>
+</head>
+
+<body>
+<header>
+<h1>Select By Attribute</h1>
+<p>Using CSS Selectors, jQuery can select elements by their attributes and values.</p>
+</header>
+<p>
+  <input type="button" name="selectAttribute" id="selectAttribute" value="Select by Attribute">
+  <input type="button" name="selectByLanguage" id="selectByLanguage" value="Select if in Spanish">
+  <input type="button" name="selectRed" id="selectRed" value="Select Anything with Red In It">
+  <input type="button" name="selectPDF" id="selectPDF" value="Select Links to PDFs">
+  <input type="button" name="containsSelect" id="containsSelect" value="Select if Name contains 'select'">
+</p>
+<section contenteditable="true">
+<h3>You can edit this content now in HTML</h3>
+<p>Go ahead, edit me.</p>
+<p lang="es">Vaya por delante, me edición.</p>
+</section>
+<section>
+<h3>You cannot edit this content.</h3>
+<p>Go ahead, edit me.</p>
+<p lang="es">Vaya por delante, me edición.</p>
+</section>
+<section>
+<h3>Some Styled Paragraphs</h3>
+<p class="red-Text">I am all red text.</p>
+<p class="blue-Text">I am all blue text.</p>
+<p>I have some <span class="red-Text">red</span> text.</p>
+<p>I have some <span class="blue-Text">blue</span> text.</p>
+<p class="red-BG">I have a red background.</p>
+<p class="blue-Text">I have a blue background.</p>
+<h2>Resources</h2>
+<p><a href="http://coding.smashingmagazine.com/wp-content/uploads/images/css3-cheat-sheet/css3-cheat-sheet.pdf">CSS3 Cheat Sheet</a></p>
+<p><a href="../../../../notebook/rc007-jquery_online.pdf">jQuery Selectors Cheat Sheet</a></p>
+<p><a href="http://jquery.org/">jQuery Project</a></p>
+</section>
+
+</body>
+</html>

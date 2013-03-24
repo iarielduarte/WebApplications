@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Exercise 3: Getting Started with jQuery()</title>
+<script src="../scripts/jquery_1_6_1.js"></script>
+
+<script>
+$(document).ready(function(){
+	$("#hideSummary").click(function(){		
+	    $("#jQuerySummary").hide();
+	$("#showSummary").click(function(){		
+	    $("#jQuerySummary").show();
+	});
+	});
+});
+</script>
+<link href="../css/jQueryLesson_styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Understanding jQuery Fundamentals</h1>
+<div id="basicSyntax">
+  <p>The jQuery syntax is designed  for <strong>selecting</strong> HTML elements and then performing some <strong>action</strong> on the selected element or elements. </p>
+  <p>Basic syntax is: <strong>$(selector).action()</strong></p>
+  <ul>
+    <li>A dollar sign is used to define the jQuery</li>
+    <li>A (selector) to "query (or find)" HTML elements</li>
+    <li>A jQuery action() to be performed on the discovered (found) element or elements</li>
+  </ul>
+  <ol>
+    <li>Create an HTML page or use this one.</li>
+    <li>Create the link to the jquery library:<br>
+      <span class="codeExample">&lt;script src=&quot;../scripts/jquery_1_6_1.js&quot;&gt;&lt;/script&gt;</span><br>
+  <br>
+    </li>
+    <li>Create	a &lt;script&gt; block and call the jQuery function using the syntax: 
+      <br>
+      <span class="codeExample">$(selector)</span><br>
+      <br>
+      The selector is similar to CSS selectors and XPath selectors in that it selects one or more elements in the HTML document. The selector will be added in step #7.<br>
+      This is an alias to the jQuery function:<span class="codeExample"> jQuery() </span>which may also be used here.<br>
+      This function returns a JavaScript object that contains an array of the HTML files DOM elements in the order in which they are defined in the HTML
+  <br>
+      <br>
+    </li>
+    <li>Create a <span class="codeExample">&lt;div&gt;</span> tag with content or use the <span class="codeExample">#jQuerySummary</span> div below.</li>
+    <li>Create two buttons with the labels &quot;Show Summary&quot; and &quot;Hide Summary&quot;.<br>
+      <br>
+      <input type="button" name="showSummary" id="showSummary" value="Show Summary">
+      <input type="button" name="hideSummary" id="hideSummary" value="Hide Summary">
+      <br>
+      <br>
+    </li>
+    <li>Locate the &lt;div&gt; with jQuery:<br>
+      <br>
+      <span class="codeExample">$('jQuerySummary')</span><br>
+      <br>
+    </li>
+    <li>Invoke the show() method of the jQuery Wrapper object:<br>
+      <span class="codeExample"><br>
+      $('jQuerySummary').show();</span><br>
+      <br>
+    </li>
+    <li>Place the code in the document ready block:<br>
+      <br>
+      <span class="codeExample">&lt;script&gt;<br>
+      $(document).ready(function(){<br>
+      $(&quot;showSummary&quot;).click(function(){ <br>
+      $(&quot;#jQuerySummary&quot;).show();<br>
+      });<br>
+      });<br>
+  &lt;/script&gt;</span><br>
+      <br>
+    </li>
+    <li>Repeat the code and modify it to invoke the hide() method.<br>
+      <br>
+      <span class="codeExample">&lt;script&gt;<br>
+      $(document).ready(function(){<br>
+      $(&quot;hideSummary&quot;).click(function(){ <br>
+      $(&quot;#jQuerySummary&quot;).hide();<br>
+      });<br>
+      });<br>
+  &lt;/script&gt;</span></li>
+  </ol>
+</div>
+<div class="summary" id="jQuerySummary">
+  <h1>jQuery() Summary</h1>
+  <h2>jQuery() Wrapper</h2>
+  <ul>
+    <li>Uses Selectors like CSS and XPath</li>
+    <li>jQuery() returns an object (the jQuery wrapper) containing an array of DOM elements</li>
+    <li>The wrapper object contains a large number of useful methods that act on the collected group of elements returned by the selector</li>
+  </ul>
+  <p>&nbsp;</p>
+</div>
+<p>
+
+</body>
+</html>

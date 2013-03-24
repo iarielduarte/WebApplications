@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lesson 2: Using Selectors</title>
+<script type="text/javascript" src="../scripts/jquery_1_6_1.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+  $("input#selectHeader").click(function(){
+    $(":header").css("background-color","yellow");
+  });
+
+  $("input#selectAllCheckBoxes").click(function(){
+    $(":checkbox").attr("disabled","disabled");
+  })
+
+  $("input#selectChecked").click(function(){
+    $(":checkbox:checked").attr("disabled","disabled");
+  });
+});
+</script>
+<style type="text/css">
+td.hilite {
+			background-color: yellow;
+}
+</style>
+</head>
+
+<body>
+<h1>Using jQuery Selectors</h1>
+<p>In addition to CSS Selectors, jQuery supports many robust custom filter selectors.</p>
+<p>Below is an incomplete list of jQuery selectors (some may be included in CSS as well)</p>
+<p>
+  <input type="button" name="selectHeader" id="selectHeader" value="Select Headers">
+  <input type="button" name="selectAllCheckBoxes" id="selectAllCheckBoxes" value="Select All Checkboxes">
+  <input type="button" name="selectChecked" id="selectChecked" value="Select Only Checked Checkboxes">
+</p>
+<table width="601" border="1" cellspacing="2" cellpadding="2">
+  <tr>
+    <th width="65" scope="col">Selector</th>
+    <th width="388" scope="col">Description</th>
+    <th width="120" scope="col">Included in CSS</th>
+  </tr>
+  <tr>
+    <td>:animated</td>
+    <td>Selects elements that are controlled with animation</td>
+    <td align="center"><input type="checkbox" name="checkbox" id="checkbox">
+    <label for="checkbox"></label></td>
+  </tr>
+  <tr>
+    <td>:button</td>
+    <td>Selects only button elements</td>
+    <td align="center"><input type="checkbox" name="checkbox2" id="checkbox2">
+    <label for="checkbox2"></label></td>
+  </tr>
+  <tr>
+    <td>:checked</td>
+    <td>Selects checkboxes or radio buttons that are in a checked state</td>
+    <td align="center"><input name="checkbox3" type="checkbox" id="checkbox3" checked>
+    <label for="checkbox3"></label></td>
+  </tr>
+  <tr>
+    <td>:not(selector</td>
+    <td>Selects any elements that are not of the selector type.</td>
+    <td align="center"><input name="checkbox4" type="checkbox" id="checkbox4" checked>
+    <label for="checkbox4"></label></td>
+  </tr>
+  <tr>
+    <td>:password</td>
+    <td>Selects only password elements</td>
+    <td align="center"><input type="checkbox" name="checkbox5" id="checkbox5"></td>
+  </tr>
+  <tr>
+    <td>:disabled</td>
+    <td>Selects only elements in a disabled state</td>
+    <td align="center"><input name="checkbox6" type="checkbox" id="checkbox6" checked></td>
+  </tr>
+  <tr>
+    <td>:enabled</td>
+    <td>Selects only elements in an enabled state</td>
+    <td align="center"><input name="checkbox7" type="checkbox" id="checkbox7" checked></td>
+  </tr>
+  <tr>
+    <td>:contains(T)</td>
+    <td>Selects only elements containing the text &quot;T&quot;</td>
+    <td align="center"><input type="checkbox" name="checkbox8" id="checkbox8"></td>
+  </tr>
+  <tr>
+    <td>:has(selector)</td>
+    <td>Selects only elements that contain at least one element that matches the selector</td>
+    <td align="center"><input type="checkbox" name="checkbox9" id="checkbox9"></td>
+  </tr>
+</table>
+<h2>Instructions:</h2>
+<p>1. Modify the code to select all header elements using a jquery selector.</p>
+<p>2. Modify the code to select all checkboxes using a jquery selector.</p>
+<blockquote>
+  <p>If you are correct all the checkboxes will become disabled.</p>
+</blockquote>
+<p>3.Modify the code to select only the checked checkboxes using a jquery selector.</p>
+<blockquote>
+  <p>If you are correct only the checked  checkboxes will become disabled.</p>
+</blockquote>
+<p>&nbsp;</p>
+</body>
+</html>

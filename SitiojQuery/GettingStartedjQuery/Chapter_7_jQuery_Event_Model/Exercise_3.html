@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lesson 5 jQuery Event Model</title>
+
+<script type="text/javascript" src="../scripts/jquery_1_6_1.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+  var info;
+  var grain = 
+ {
+	 "foodLabels":
+	[
+		{"food": "brown rice"},
+		{"food": "buckwheat"},
+		{"food": "bulgur"},
+		{"food": "millet"},
+		{"food": "oatmeal"},
+		{"food": "quinoa"},
+		{"food": "rolled oats"},
+		{"food": "whole-grain barley"},
+		{"food": "whole-grain corn"},
+		{"food": "whole-grain sorghum"},
+		{"food": "whole-grain triticale"},
+		{"food": "whole oats"},
+		{"food": "whole rye"},
+		{"food": "whole wheat"},
+		{"food": "wild rice"}
+	] 
+ }
+ 
+ //assign the data
+
+
+//get the data
+
+
+//loop through the object
+
+
+//set the cursor
+ $("img").bind('mouseover', function(){
+    $(this).css('cursor','pointer');
+});
+
+
+});
+</script>
+
+<style type="text/css">
+img
+{
+	margin-right: 36px;
+}
+</style>
+</head>
+
+<body>
+<h1>Using the Event object</h1>
+<p><img src="rice.gif" alt="grain" name="grainImg" id="grainImg"></p>
+<p>jQuery utilizes an event system whereby an event object is guaranteed to be passed to any event handler.</p>
+<p>The event object also contains guaranteed properties depending on the event.</p>
+<p>The jQuery.data() method allows you to attach data of any type to DOM elements. The data() method is safe from circular references and thus free from memory leaks. jQuery ensures that the data is removed when DOM elements are removed via jQuery methods, and when the user leaves the page. You can store arbitrary data associated with a specified element and return the value that was set.</p>
+</body>
+</html>

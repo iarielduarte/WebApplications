@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript vs. jQuery</title>
+<script type="text/javascript" src="../scripts/jquery_1_6_1.js"></script>
+<script>
+function answerJS()
+{
+	var checkedValue;
+	var answerField = document.getElementById('answer');
+	var radioButtons = document.getElementsByTagName('input');
+
+	for (var i = 0; i < radioButtons.length; i++)
+	{
+		if (radioButtons[i].type == 'radio' && radioButtons[i].name == 'difficulty' && radioButtons[i].checked)
+		{
+			checkedValue = radioButtons[i].value;
+		}
+		answerField.value = checkedValue;	
+	}
+}
+
+      $(function(){
+        $('#answerjQuery').click(function()
+		{
+          var checkedValue = $('[name="difficulty"]:radio:checked').val();
+          $('input#answer').val(checkedValue);
+        });
+      });
+ </script>
+
+</head>
+
+<body>
+<p><em>from jQuery.com:</em></p>
+<p>jQuery is a fast and concise JavaScript Library that simplifies</p>
+<ul>
+  <li> HTML   document traversing</li>
+  <li>event handling</li>
+  <li>animating</li>
+  <li>and Ajax interactions</li>
+</ul>
+<p> for rapid web development.</p>
+<form action="" method="post" name="radioButton_form" id="radioButton_form">
+  <p><strong>How difficult is jQuery? </strong> </p>
+  <p>
+    <label>
+      <input type="radio" name="difficulty" value="very difficult" id="difficulty_0">
+      very difficult</label>
+    <br>
+    <label>
+      <input type="radio" name="difficulty" value="medium difficulty" id="difficulty_1">
+      medium difficulty</label>
+    <br>
+    <label>
+      <input type="radio" name="difficulty" value="not too difficult" id="difficulty_2">
+      not too difficult</label>
+    <br>
+    <label>
+      <input type="radio" name="difficulty" value="easy" id="difficulty_3">
+      easy</label>
+  </p>
+  <label>
+  	<input name="answer" type="text" id="answer">
+  </label>
+  <p>
+    <input type="button" name="answerJavaScript" id="answerJavaScript" value="Answer with JavaScript" onclick="answerJS()">
+    <input type="button" name="answerjQuery" id="answerjQuery" value="Answer with jQuery">
+    <br>
+  </p>
+</form>
+</body>
+</html>

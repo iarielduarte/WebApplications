@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lesson 5 jQuery Event Model</title>
+<link href="../css/jQueryLesson_styles.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../scripts/jquery_1_6_1.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+	
+	//code after step two
+  $("#jquery").bind('click',function(){
+    alert("The URL for jquery is: http://jquery.org/");
+  });
+  
+   $("#jquery").bind('mouseover', function(){
+    $(this).css('cursor','pointer');
+  });
+  
+  //code after step three
+/*  $('#jquery').bind({
+	click: function() {click : alert("The URL for jquery is: http://jquery.org/")},
+	mouseover: function(){$(this).css('cursor','pointer');}
+  });*/
+});
+</script>
+
+
+	
+
+</head>
+
+<body>
+<div class="sideNote">
+  <h3>Side Note</h3>
+  <p><strong class="codeExample">hover(): </strong>Bind two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.</p>
+  <p>The <span class="codeExample">.hover() </span>method binds handlers for both mouseenter and mouseleave events. You can use it to simply apply behavior to an element during the time the mouse is within the element, because it only fires the event when the area covered by the elements is hovered and ignores transitions to child elements.</p>
+  <p><span class="codeExample"><strong>mouseover()</strong></span><strong>: </strong>Bind an event handler to the "mouseover" JavaScript event, or trigger that event on an element.</p>
+  <p>The mouseover event is sent to an element when the mouse pointer enters the element. Any HTML element can receive this event.</p>
+</div>
+<h1>Create a Simple Binding Event with jQuery</h1>
+<p><img src="jquerylogo.png" id="jquery" width="96" height="96" alt="jQuery"></p>
+<p>The jQuery bind() method is used to create event handlers on DOM elements.</p>
+<p>&nbsp;</p>
+
+<h1>Instructions </h1>
+  <p>1. Add is bind method to the image element, that displays an alert box that shows the URL for jQuery (http://jquery.org/)</p>
+  <p>2. Add another bind method that changes the mouse cursor to a pointer when the user hovers over the image with their mouse.</p>
+  <p>3. Combine the two events into one bind().</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

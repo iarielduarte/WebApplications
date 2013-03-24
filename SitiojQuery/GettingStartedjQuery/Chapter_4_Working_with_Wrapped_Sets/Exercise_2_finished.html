@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lesson 4: Working with Wrapped Sets</title>
+<style type="text/css">
+#fruitList
+{
+	width: 200px;
+	float: left;
+	margin-right: 24px;
+}
+
+.underlineFruit {
+	text-decoration:underline;
+}
+
+.makeItalic {
+	font-style:italic;
+}
+</style>
+<script type="text/javascript" src="../scripts/jquery_1_6_1.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+  //Step One:
+  $('ul>li').addClass('underlineFruit')
+  	    	.add('#fruitList li')
+		    .addClass('makeItalic');
+  
+});
+</script>
+
+</head>
+
+<body>
+<h1>Adding Elements to sets and working with jQuery Chains</h1>
+<p>jQuery provides many methods for selecting portions of a wrapped set. These methods include the following:*</p>
+<p><i>* not a complete list.</i></p>
+<table width="483" border="1" cellspacing="2" cellpadding="2">
+  <tr>
+    <th width="80" align="left" scope="col">Method</th>
+    <th width="383" align="left" scope="col">Description</th>
+  </tr>
+  <tr>
+    <td><code>get(index)</code></td>
+    <td>Returns the element at the index in the wrapped set.</td>
+  </tr>
+  <tr>
+    <td><code>eq(index)</code></td>
+    <td>Returns a single element at the index in the wrapped set.</td>
+  </tr>
+  <tr>
+    <td><code>first()</code></td>
+    <td>Returns the first element in the wrapped set.</td>
+  </tr>
+  <tr>
+    <td><code>last()</code></td>
+    <td>Returns the last element in the wrapped set.</td>
+  </tr>
+</table>
+<p>After creating a wrapped set of elements, you can add to the set with the <code>add() </code>method.</p>
+<p>Between the creation of the two sets you can perform actions.</p>
+<ul>
+  <div id="fruitList">
+    <li>Apples</li>
+    <li>Apricots</li>
+    <li>Bananas</li>
+    <li>Berries
+      <ul>
+        <li>Strawberries</li>
+        <li>Blueberries</li>
+        <li>Raspberries</li>
+      </ul>
+    </li>
+    <li>Cherries</li>
+    <li>Grapefruit</li>
+    <li>Grapes</li>
+    <li>Kiwi</li>
+    <li>Lemons</li>
+    <li>Limes</li>
+    <li>Mangoes</li>
+    <li>Melons
+      <ul>
+        <li>Cantaloupe</li>
+        <li>Honeydew</li>
+        <li>Watermelon</li>
+      </ul>
+    </li>
+    <li>Mixed Fruits
+      <ul>
+        <li>Fruit Cocktail</li>
+      </ul>
+    </li>
+    <li>Nectarines</li>
+    <li>Oranges</li>
+    <li>Peaches</li>
+    <li>Pears</li>
+    <li>Papaya</li>
+    <li>Pineapple</li>
+    <li>Plums</li>
+    <li>Prunes</li>
+    <li>Raisins</li>
+    <li>Tangerines</li>
+    <li>100% Fruit Juices
+      <ul>
+        <li>Orange</li>
+        <li>Apple</li>
+        <li>Grape</li>
+        <li>Grapefruit</li>
+      </ul>
+    </li>
+  </div> 
+  <h1>Instructions </h1>
+  <p>1. Modify the code to select all melons and underline them with the provided css, then add all fruits to the set and make them italic.</p>
+</ul>
+</body>
+</html>

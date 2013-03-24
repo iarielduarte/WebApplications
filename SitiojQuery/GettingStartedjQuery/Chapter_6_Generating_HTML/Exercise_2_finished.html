@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lesson 3: Generating HTML</title>
+<script type="text/javascript" src="../scripts/jquery_1_6_1.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$('<img>',
+	{
+		src : 'foodDiaryPlate.png',
+		alt : 'The USDA Food Plate',
+		id : 'foodPlate',
+		title : 'The USDA Food Plate',
+		click : function() 
+		{
+			alert($(this).attr('title') + ' is from the USDA Foot Plate Website');
+		}
+	})
+	.appendTo('body');
+});
+
+
+//});
+</script>
+</head>
+
+<body>
+<h1>Generating HTML Elements with Attributes
+</h1>
+<p>Elements can be created that contain any number of attributes by passing the $() function a Javascript object whose properties serve as the name and value for the elements attributes.</p>
+<p><code>$('&lt;div&gt;',</code></p>
+<p><code>{ id : &quot;myDiv&quot;,<br>
+ class : &quot;myClass&quot;<br>
+}</code></p>
+<h2>Instructions:</h2>
+<p>1. Create a web page or use this one. </p>
+<p>2. Create a img tag with the following attributes:</p>
+<p>src = foodDiaryPlate.png</p>
+<p>alt = The USDA Food Plate</p>
+<p>title = The USDA Food Plate</p>
+<p>click = function() alert($(this) + &quot; logo is from the USDA Foot Plate Website")</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

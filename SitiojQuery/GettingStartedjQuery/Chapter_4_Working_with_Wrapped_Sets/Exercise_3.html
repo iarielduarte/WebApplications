@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lesson 4: Working with Wrapped Sets</title>
+<style type="text/css">
+#fruitList
+{
+	width: 200px;
+	float: left;
+	margin-right: 24px;
+}
+
+.underlineFruit {
+	text-decoration:underline;
+}
+
+.makeItalic {
+	font-style:italic;
+}
+</style>
+<script type="text/javascript" src="../scripts/jquery_1_6_1.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+  //Step One:
+	$('li').each(function(index) {
+		alert($(this).text() + " is a " + this.className + ".");
+        
+    });
+  
+});
+</script>
+
+</head>
+
+<body>
+<h1>Looping through a wrapped set</h1>
+<p>jQuery provides  methods for iterating through a wrapped set or a portion of a wrapped set. </p>
+<p>The each(iterator) method accepts a function argument that contains two parameters. The first is a zero-based index of the element within the set and the second is the element itself.</p>
+<p>Example:</p>
+<p><code>$('img').each(function(n, element) {</code></p>
+<p><code> &nbsp;&nbsp;&nbsp;this.title = 'This is picture # [' + n + ']. The id is ' + this.id;</code></p>
+<p><code>});</code></p>
+<p>Grains</p>
+<ul>
+  <div id="fruitList">
+    <li class="whole grain">Amaranth</li>
+    <li class="refined grain">cornbread</li>
+    <li class="whole grain">millet</li>
+    <li class="refined grain">noodles</li>
+    <li class="refined grain">pasta</li>
+    <li class="whole grain">popcorn</li>
+  </div> 
+  <h1>Instructions </h1>
+  <p>1. Loop through each Grain on the list and display an alert box indicating if the grain is a whole grain or a refined grain</p>
+</ul>
+</body>
+</html>

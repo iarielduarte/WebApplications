@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lesson 3: Generating HTML</title>
+<script type="text/javascript" src="../scripts/jquery_1_6_1.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+  // Step 5: 
+   var authorName = $('#authorName').text();
+  // Step 1-2:
+   $("<div id='author'>Kevin Ruse</div>").appendTo('body');
+  // Step 4:
+     $("<div>Kevin Ruse</div>").attr('id', 'Kevin Ruse').appendTo('body');
+  // Step 6:
+     $("<div>Kevin Ruse</div>").attr('id', authorName).appendTo('body');
+  });
+
+//});
+</script>
+</head>
+
+<body>
+<h1>Generating HTML Elements
+</h1>
+<p>The $() function can select existing page elements but it can also create HTML elements.</p>
+<p><code>$('&lt;h1&gt;Using jQuery to Generate HTML&lt;/h1&gt;');</code></p>
+<p>to create an empty element:</p>
+<p><code>$('&lt;div&gt;');</code></p>
+<p>You append the element to the page using .appendTo('tagName')</p>
+<h3 id="authorName">Kevin Ruse</h3>
+<h2>Instructions:</h2>
+<p>1. Create a web page or use this one. Be sure to include a tag with an id=&quot;authorName&quot;. (i.e. the &lt;h3&gt; &quot;Kevin Ruse&quot; shown above)</p>
+<p>2. Create a div tag with an id attribute equal to your name using jQuery</p>
+<p>3. Use the appendTo('body') method to add the div tag to the page.</p>
+<p>3. Test the page and check the output.</p>
+<p>4. Modify the page to use the attr() method to create the id attribute.</p>
+<p>5. Create a variable that stores the value of the tag (created in Step One) whose id=&quot;authorName&quot;.</p>
+<p>6. Modify the code so that the variable now becomes the value of the attribute you created in Step Four.</p>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lesson: 6 Animation and Effects</title>
+<style type="text/css">
+
+#box
+{
+	width: 400px;	
+}
+#boxHeader h1
+{
+	font-family: "Franklin Gothic Demi", Verdana, "Gill Sans MT Condensed", sans-serif;
+	font-size: 18px;
+	color: #CCCCCC;
+	background-color: #000000;
+	height: 24px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 6px;
+	margin: 0px;
+
+}
+
+#boxContent
+{
+	float: left;
+	border: medium solid #333333;
+	margin: 0px;
+	padding:10px;
+}
+
+#allDoneMsg
+{
+position: absolute;
+left: 100px;
+top: 200px;
+width: 150px;
+text-align:center;
+visibility:hidden;	
+}
+</style>
+
+<script type="text/javascript" src="../scripts/jquery_1_6_1.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+  $("div#boxHeader").css('cursor','pointer');	
+  $("div#boxHeader").click(function(){
+
+  });
+  
+  function allDone()
+  {
+	   $("div#allDoneMsg").css('visibility', 'visible');
+  }
+
+});
+
+</script>
+
+</head>
+
+<body>
+<h1>jQuery toggle() method</h1>
+<p>The toggle() method allows you to control the hiding and displaying of elements.</p>
+<div id="box">
+<div id="boxHeader">
+  <h1>Tips for Eating Out</h1>
+</div>
+  <div id="boxContent">
+  <ul>
+    <li>As a beverage choice, ask for water or order fat-free or low-fat milk, unsweetened tea, or other drinks without added sugars.</li>
+  </ul>
+  <ul>
+    <li>Ask for whole-wheat bread for sandwiches.</li>
+  </ul>
+  <ul>
+    <li>In a restaurant, start your meal with a salad packed with veggies, to help control hunger and feel satisfied sooner.</li>
+  </ul>
+  <ul>
+    <li>Ask for salad dressing to be served on the side.  Then use only as much as you want.</li>
+  </ul>
+  <ul>
+    <li>Choose main dishes that include vegetables, such as stir fries, kebobs, or pasta with a tomato sauce.</li>
+  </ul>
+  <ul>
+    <li>Order steamed, grilled, or broiled dishes instead of those that are fried or sautéed.</li>
+  </ul>
+  <ul>
+    <li>Choose a &ldquo;small&rdquo; or &ldquo;medium&rdquo; portion. This includes main dishes, side dishes, and beverages. </li>
+  </ul>
+  <ul>
+    <li>Order an item from the menu instead heading for the &ldquo;all-you-can-eat&rdquo; buffet.</li>
+  </ul>
+</div>
+</div>
+<div id="allDoneMsg">
+<p>All Done!</p>
+</div>
+</body>
+</html>

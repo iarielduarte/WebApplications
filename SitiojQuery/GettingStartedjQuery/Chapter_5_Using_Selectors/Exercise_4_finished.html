@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lesson 2: Selecting Elements</title>
+<script type="text/javascript" src="../scripts/jquery_1_6_1.js"></script>
+<script type="text/javascript">
+$(function(){
+  $("input#selectChild").click(function(){
+    $("p:first>em").css("background-color","yellow");
+	//as opposed to:
+	// $("p>em").css("background-color","yellow");
+  });
+});
+
+$(function(){
+  $("input#selectFirstRow").click(function(){
+    $("tr:first-child").css("background-color","yellow");
+  });
+});
+
+$(function(){
+  $("input#selectLastRow").click(function(){
+    $("tr:last-child").css("background-color","yellow");
+  });
+});
+
+$(function(){
+  $("input#selectOdd").click(function(){
+    $("tr:odd").css("background-color","yellow");
+  });
+});
+
+$(function(){
+  $("input#selectEven").click(function(){
+    $("tr:even").css("background-color","yellow");
+  });
+});
+
+$(function(){
+  $("input#selectOnly").click(function(){
+    $("p em:only-child").css("background-color","yellow");
+  });
+});
+
+$(function(){
+  $("input#selectFifth").click(function(){
+    $("tr:nth-child(5)").css("background-color","yellow");
+  });
+})
+</script>
+</head>
+
+<body>
+<h1>Selecting Elements by Position</h1>
+<p>jQuery uses more CSS selectors that allow you to select an element by its position. <em>For example</em>, you can use the &gt; selector to select elements that are direct children of other elements.</p>
+<p>See the chart below for jQuery Supported CSS selectors.</p>
+<p>CSS calls selectors such as button:down <em>pseudo-selectors.</em> jQuery calls these selector types <em>filters</em>.</p>
+<table width="718" border="1" cellspacing="2" cellpadding="2">
+  <tr>
+    <th width="68" align="center" scope="col">Selector</th>
+    <th width="345" align="left" scope="col">Description</th>
+    <th width="277" align="left" scope="col">Example</th>
+  </tr>
+  <tr>
+    <td align="center">*</td>
+    <td align="left">Any Element</td>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center">E</td>
+    <td align="left">Element by Name</td>
+    <td align="left">p</td>
+  </tr>
+  <tr>
+    <td align="center">E D</td>
+    <td align="left">D elements that are descendants of E</td>
+    <td align="left">p a</td>
+  </tr>
+  <tr>
+    <td align="center">E &gt; C</td>
+    <td align="left">C elements that are direct children of E</td>
+    <td align="left">tr td</td>
+  </tr>
+  <tr>
+    <td align="center">E + F</td>
+    <td align="left">F elements that are immediately preceded by E</td>
+    <td align="left">&lt;T&gt; &lt;E /&gt; &lt;F /&gt; &lt;/T&gt;</td>
+  </tr>
+  <tr>
+    <td align="center">E ~ F</td>
+    <td align="left">F elements preceded by any E</td>
+    <td align="left">&lt;T&gt; &lt;E /&gt; &lt;L /&gt;&lt;F /&gt; &lt;/T&gt;</td>
+  </tr>
+  <tr>
+    <td align="center">E.c</td>
+    <td align="left">E elements with a class called c</td>
+    <td align="left">&lt;p class='c'&gt;</td>
+  </tr>
+  <tr>
+    <td align="center">E#ie</td>
+    <td align="left">E elements with an id of ie</td>
+    <td align="left">&lt;p id=&quot;ie&quot;&gt;</td>
+  </tr>
+  <tr>
+    <td align="center">E[a]</td>
+    <td align="left">E elements with an attribute of a</td>
+    <td align="left">&lt;p style=&quot;color:red&quot;&gt;</td>
+  </tr>
+  <tr>
+    <td align="center">E[a=2]</td>
+    <td align="left">E elements with an a attribute equal to 2</td>
+    <td align="left">&lt;p hidden=&quot;hidden&quot;&gt;</td>
+  </tr>
+  <tr>
+    <td align="center">E[a^v]</td>
+    <td align="left">E elements that have an attribute a that begins with v</td>
+    <td align="left">&lt;p class=&quot;redStyle&quot;&gt;</td>
+  </tr>
+  <tr>
+    <td align="center">E[a$v]</td>
+    <td align="left">E elements that have an attribute a that ends with v</td>
+    <td align="left">&lt;a href=&quot;myPage.html&quot;&gt;</td>
+  </tr>
+  <tr>
+    <td align="center">E[a!=v]</td>
+    <td align="left">E elements that have an a attribute not equal to v</td>
+    <td align="left">&lt;p class=&quot;simple&quot;&gt;</td>
+  </tr>
+  <tr>
+    <td align="center">E[a*=v]</td>
+    <td align="left">E elements that have an a attribute that contains v</td>
+    <td align="left">&lt;p class=&quot;introClass&quot;&gt;&lt;p class=&quot;newIntro&quot;&gt;</td>
+  </tr>
+</table>
+<p>
+  <input type="button" name="selectChild" id="selectChild" value="Select an immediate child of p">
+  <input type="button" name="selectFirstRow" id="selectFirstRow" value="Select the First Row">
+  <input type="button" name="selectLastRow" id="selectLastRow" value="Select the Last Row">
+  <input type="button" name="selectOdd" id="selectOdd" value="Select Odd Rows">
+    <input type="button" name="selectEven" id="selectEven" value="Select Even Rows">
+    <input type="button" name="selectOnly" id="selectOnly" value="Select the Only Child of the First Paragraph">
+  <input type="button" name="selectFifth" id="selectFifth" value="Select the 5th Row">
+</p>
+</body>
+</html>

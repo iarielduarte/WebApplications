@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Exercise 2 Finished: How do I begin to execute jQuery?</title>
+<script src="../scripts/jquery_1_6_1.js"></script>
+<script>
+     $(document).ready(function()
+	 {
+       $("a").click(function(event)
+	   {
+         alert("You prevented the default behavior of the link to jquery.com with preventDefault()");
+         event.preventDefault();
+       });
+     });
+</script>
+</head>
+
+<body>
+
+<h2> <a href="http://api.jquery.com/ready/" title="Permalink to .ready()" rel="bookmark">.ready()</a></h2>
+
+</body>
+</html>

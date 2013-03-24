@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lesson 5: Working with Elements and Attributes</title>
+<style type="text/css">
+select
+{
+}
+
+.myPlate
+{
+	float: right;
+}
+</style>
+
+<script type="text/javascript" src="../scripts/jquery_1_6_1.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+	  var dairy =  [
+				{	
+					"serving" : "Milk",
+					"measure" : "1 cup"
+				},
+				{
+					"serving" : "Yogurt",
+					"measure" : "1 cup"
+				},
+				{
+					"serving" : "Pudding (w/Milk)",
+					"measure" : "1 cup"
+				},
+				{
+					"serving" : "Ice Cream",
+					"measure" : "1 scoop"
+				},
+				{
+					"serving" : "Soy Milk",
+					"measure" : "1 cup"
+				}
+			  ]	
+			  var grains =  [
+				{	
+					"serving" : "Bagel",
+					"measure" : "1 large bagel"
+				},
+				{
+					"serving" : "Biscuits",
+					"measure" : "1 large 3&quot; diameter"
+				},
+				{
+					"serving" : "Breads",
+					"measure" : "2 regular slices"
+				},
+				{
+					"serving" : "Cornbread",
+					"measure" : "1 medium piece"
+				},
+				{
+					"serving" : "Oatmeal",
+					"measure" : "Half cup cooked"
+				}
+			  ]	
+
+$('#foodGroups_cb').change(function() {
+		if($('#foodGroups_cb option:selected').text() == 'Dairy')
+		{
+			$('#foodGroupImg').attr({src:"skim_sm.gif"});
+			$('#foodList').html("<ul>");
+			$.each(dairy, function(index, serving)
+			{
+				$('#foodList ul').append("<li>" + serving.serving + " (" + serving.measure + ")</li>");
+			})
+		}
+		else if($('#foodGroups_cb option:selected').text() == 'Grain')
+		{
+			$('#foodGroupImg').attr({src:"crackers_sm.gif"});
+			$('#foodList').html("<ul>");
+			$.each(grains, function(index, serving)
+			{
+				$('#foodList ul').append("<li>" + serving.serving + " (" + serving.measure + ")</li>");
+			});
+		}
+});
+});
+</script>
+
+</head>
+
+<body>
+<h1>Working with Elements and Attributes </h1>
+<p>
+  <select name="foodGroups_cb" id="foodGroups_cb">
+    <option selected>Choose a Food Group</option>
+    <option value="dairy">Dairy</option>
+    <option value="fruit">Fruit</option>
+    <option value="grain">Grain</option>
+    <option value="protein">Protein</option>
+    <option value="vegetable">Vegetable</option>
+  </select>
+</p>
+<p><img id="foodGroupImg" src="foodDiaryPlate.png" alt="my plate" style="padding-right:36px; float:left;"></p>
+<div id="foodList" style="margin-left:100px">
+
+</div>
+</body>
+</html>

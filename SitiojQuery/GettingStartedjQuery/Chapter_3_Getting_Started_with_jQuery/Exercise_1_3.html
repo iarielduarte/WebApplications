@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Exercise 2: Prepare to execute your JQuery</title>
+<script src="../scripts/jquery_1_6_1.js"></script>
+
+<script>
+
+$(document).ready(function()
+{
+	$("a").click(function(event)
+	{
+		alert("you prevented the default behavior of the link to jquery.com with preventDefault()");
+		event.preventDefault();
+	});
+});
+</script>
+</head>
+
+<body>
+<h1>How do I begin to execute jQuery?</h1>
+<h2>Instructions:</h2>
+<p>With JavaScript we wait for a page to load before we execute our JavaScript statements (as shown below).</p>
+<pre>window.onload = function(){ alert("welcome"); }</pre>
+<p>With jQuery we wait for the jQuery ready event.</p>
+<h2> <a href="http://api.jquery.com/ready/" title="Permalink to .ready()" rel="bookmark">.ready()</a></h2>
+<p>Specify a function to execute when the DOM is fully loaded.</p>
+<ol>
+  <li>Create a new html file or use this one.</li>
+  <li>Be sure the file you create contains a hypertext link (as shown above in the heading 2 link .ready() to http://api.jquery.com/ready/)</li>
+  <li>Create a script block.</li>
+  <li>Create a function to be executed after the document ready event</li>
+</ol>
+<pre>     &lt;script&gt;
+       $(document).ready(function()
+			{         
+				$("a").click(function(event)
+					{ 
+			          alert("You just prevented the default action with 'event.preventDefault();'");
+					  event.preventDefault();
+				    }
+		    }
+
+      &lt;/script&gt;
+</pre>
+<p>The jQuery syntax is designed  for <strong>selecting</strong> HTML elements and then performing some <strong>action</strong> on the selected element or elements. </p>
+<p>Basic syntax is: <strong>$(selector).action()</strong></p>
+<ul>
+  <li>A dollar sign is used to define the jQuery</li>
+  <li>A (selector) to "query (or find)" HTML elements</li>
+  <li>A jQuery action() to be performed on the discovered (found) element or elements</li>
+</ul>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
