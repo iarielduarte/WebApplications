@@ -1,0 +1,83 @@
+.capitulo {
+  width: 42em;
+  text-align:left;
+}
+#titulo {
+  font-size: 1.5em;
+}
+#excerpt {
+  font-style: italic;
+}
+
+/* -----------------------------------
+   =NOTASPIE
+-------------------------------------- */
+
+span.notapie {
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;  
+  margin: 1em 0;
+  display:block;
+}
+
+.capitulo span.notapie {
+  display:inline; 
+}
+.texto-referencia {
+  font-weight: bold;
+}
+#notas li {
+ margin: 1em 0; 
+}
+
+#notas {
+  margin-top: 1em;
+  border-top: 1px solid #dedede;  
+}
+#nota-pie{
+  margin-top: 1em;
+  border-top: 1px solid #dedede;
+}
+
+/* -----------------------------------
+   =LLAMADA
+-------------------------------------- */
+
+/*.llamar {  
+  background: #e5e5e5;
+  position: absolute;
+  width: 145px;
+  top: -20px;
+  right: -180px;
+  padding: 12px 5px 12px 10px;
+  font: italic 1.4em "Times New Roman", Times, serif;
+}*/
+
+/* -----------------------------------
+   =LLAMADA CON ESQUINAS REDONDEADAS
+-------------------------------------- */
+
+.llamar {  
+  background: url(pq-bottom.jpg) no-repeat left bottom;
+  position: relative;
+  display:block;
+  width: 140px;  
+  padding: 0 10px 24px 10px;
+  font: italic 1.4em "Times New Roman", Times, serif;
+}
+
+.envolver-llamada {
+  background: url(pq-top.jpg) no-repeat left top;
+  position: absolute;
+  width: 160px;
+  right: -180px;
+  padding-top: 18px;
+}
+
+
+
+
+
+
+
+
