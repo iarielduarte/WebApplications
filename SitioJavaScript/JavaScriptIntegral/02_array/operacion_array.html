@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Operacion sobre Array - JavaScript</title>
+</head>
+
+<body>
+<script type="text/javascript">
+var precios = new Array();
+
+do {
+	var precio = prompt("Ingrese el precio :");
+	if(precio != "" && precio != undefined){
+		precios.push(precio);
+	}
+} while (precio != "" && precio != undefined)
+
+var cantidad = precios.length;
+
+if(cantidad>0){
+	var suma =0;
+	for(i=0; i<cantidad; i++){suma = suma + parseInt(precios[i]);}
+	var promedio = suma/cantidad;
+} else {
+	document.write("<h1 style='color:#0033FF; font-weight:bold'>No existen valores que procesar</h1>");
+}
+</script>
+
+Cantidad: <script type="text/javascript">document.write("<h3 style='color:#0033FF; font-weight:bold'>"+cantidad+"</h3>");</script>
+<br>
+<br>
+Promedio: <script type="text/javascript">document.write("<h3 style='color:#0033FF; font-weight:bold'>"+promedio+"</h3>");</script>
+<br>
+<br>
+Suma Total: <script type="text/javascript">document.write("<h3 style='color:#0033FF; font-weight:bold'>"+suma+"</h3>");</script>
+
+</body>
+</html>

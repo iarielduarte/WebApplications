@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Validaciones de Campos</title>
+<script type="text/javascript">
+function recibeFoco(elemento){
+	elemento.className='enfoco';
+}
+
+function pierdeFoco(elemento){
+	elemento.className='';
+}
+//Validacion de campos obligatorios
+function revisarObligatorio(elemento){
+	if(elemento.value == ""){
+		elemento.className="error";
+	}else{
+		elemento.className="";
+	}
+}	
+
+//Validacion de datos numericos
+function revisarNumerico(elemento){
+	
+	if(elemento.value != ""){
+		var dato = elemento.value;
+		//Verifica que sea un numero
+		if(isNaN(dato)){
+			elemento.className="error";
+		}else{
+			elemento.className="";
+		}
+	}
+}
+
+//Valida longuitud de texto
+function revisarLonguitud(elemento,largo){
+	
+	if(elemento.value != ""){
+		
+		var dato = elemento.value;
+		if(dato.length <largo){
+			elemento.className="error";
+		}else{
+			elemento.className="";
+		}
+	}
+}
+
+//Validacion de email 
+function revisarEmail(elemento){
+	if(elemento.value != ""){
+		var dato = elemento.value;
+		var expresion = /^[A-Za-z][A-Za-z0-9_]*@[A-Za-z0-9_]+.[A-Za-z0-9_.]+[A-za-z]$/;
+		if(!expresion.test(dato)){
+			elemento.className="error";
+		}else{
+			elemento.className="";
+		}
+	}
+}
+
+//Valida todo antes que se envie el formulario
+function validarTodo(){
+	var estaOk = true;
+	if(document.getElementById("nombre").value.length<2){
+		estaOk = false;
+	}
+	
+	if(document.getElementById("direccion").value.length<8){
+		estaOk = false;
+	}
+	
+	if(document.getElementById("edad").value != "" && (isNaN(document.getElementById("edad").value))){
+		estaOk = false;
+	}
+	
+	var expresion = /^[A-Za-z][A-Za-z0-9_]*@[A-Za-z0-9_]+.[A-Za-z0-9_.]+[A-za-z]$/;
+	if(!expresion.test(document.getElementById("mail").value)){
+		estaOk = false;
+	}
+	
+	if(document.getElementById("estado").value == ""){
+		estaOk = false;
+	}
+	
+	if(!document.getElementById("acepto").checked){
+		estaOk = false;
+	}
+			
+	if(!estaOk){
+		alert("Faltan valores o no esta bien, verifiquelo porfavor antes de enviar el formulario");
+	}
+	return estaOk;
+}
+</script>
+<style type="text/css">
+form {
+		width:300px;
+		margin:auto;
+	}	
+	
+label {
+		width:200px;
+		display:block;
+		margin:10px;
+		float:left;
+	}
+	
+ul	{
+		list-style:none;
+		margin:0px;	
+	}
+	
+li		{
+		margin:0px;	
+		padding:0px;
+		height:80px;	
+		}
+input[type=text], select {
+		width:200px;
+		float:left;
+		}
+button {
+		display:block;
+		clear: both;
+		margin-left:200px;
+		}
+
+.enfoco {
+		background-color: #9CF;
+		border: 1px solid green;
+		}
+		
+.ayuda {
+		font-size:x-small;
+		color:#F90;
+	}
+	
+.error{
+		background-color:#FF0000;
+		border:1px solid grey;
+			}
+</style>
+</head>
+
+<body>
+<form onSubmit="return validarTodo();">
+<ul>
+<li>
+<label for="nombre">Nombre*</label>
+<input type="text" id="nombre" name="nombre" onFocus="recibeFoco(this)" onBlur="pierdeFoco(this); revisarObligatorio(this); revisarLonguitud(this,2)"/>
+</li>
+<li>
+<label for="direccion">Direccion*</label>
+<input type="text" id="direccion" name="direccion" onFocus="recibeFoco(this)" onBlur="pierdeFoco(this); revisarObligatorio(this)"/>
+</li>
+<li>
+<label for="edad">Edad</label>
+<input type="text" id="edad" name="edad" onFocus="recibeFoco(this)" onBlur="pierdeFoco(this); revisarNumerico(this)"/>
+</li>
+<li>
+<label for="mail">Email</label><br>
+<input type="text" id="mail" name="mail" onFocus="recibeFoco(this)" onBlur="pierdeFoco(this); revisarLonguitud(this,8); revisarObligatorio(this); revisarEmail(this)"/>
+</li>
+<li>
+<label for="estado">Estado Civil</label>
+<select id="estado" name="estado" onFocus="recibeFoco(this)" onBlur="pierdeFoco(this)">
+	<option value="">Seleccione</option>
+    <option>Casado</option>
+    <option>Soltero</option>
+    <option>Divorciado</option>
+</select>
+
+</li>
+<li>
+<input type="checkbox" id="acepto" value="SI" />Aceptar Condiciones
+</li>
+</ul>
+<button>Registrarme</button>
+</form>
+</body>
+</html>

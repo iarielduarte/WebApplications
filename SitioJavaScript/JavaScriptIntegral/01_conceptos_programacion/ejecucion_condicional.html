@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejecucion Condicional - JavaScript</title>
+</head>
+
+<body>
+<script type="text/javascript">
+var cantidad = prompt("Ingrese la cantidad");
+if(cantidad <=5 ) {
+	alert("Debes conseguir mas stock");
+	cantidad = parseInt(cantidad)+10
+} else {
+	alert("Estad bien de stock");
+}
+document.write("EL Stock actual es: "+cantidad);
+
+var descuento = 0;
+var cantidadProductos = prompt("Ingrese cantidad :");
+var precioTotal = prompt("Precio total :");
+var pagaEnEfectivo = confirm("¿Pagar en efctivo?");
+
+
+
+</script>
+</body>
+</html>

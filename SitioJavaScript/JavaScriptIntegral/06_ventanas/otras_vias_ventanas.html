@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Otras Opciones de Ventanas</title>
+<style type="text/css">
+#apDiv1 {
+	position:absolute;
+	width:194px;
+	height:216px;
+	z-index:1;
+	left: 258px;
+	top: 63px;
+	background-color:#999999;
+	display:none;
+	border:1px solid black;
+}
+</style>
+</head>
+
+<body>
+<h2>Otras vias de comunicacion con ventanas</h2>
+
+<p><a href="javascript:window.print()">Imprimir</a>
+  <br>
+  <a href="javascript:window.history.back()">Back</a>
+  <br>
+  <input type="button" onClick="window.location.href='http://www.google.com.ar'" value="Google">
+   <input type="button" onClick="document.getElementById('apDiv1').style.display='block'" value="Banner">
+  
+</p>
+<p>&nbsp;</p>
+<div id="apDiv1">
+  <p>Banner</p>
+    <input type="button" onClick="document.getElementById('apDiv1').style.display='none'" value="Cerrar">
+</div>
+<p>&nbsp;</p>
+</body>
+</html>

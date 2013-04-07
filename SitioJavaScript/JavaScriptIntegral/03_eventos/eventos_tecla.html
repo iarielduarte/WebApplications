@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Eventos Tecla - JavaScript</title>
+
+<script type="text/javascript">
+
+function mostrarTecla(event){
+	alert(event.keyCode);
+	//alert(event.charCode);// otro patron que funciona en safari
+	if(event.ctrlKey){
+		alert("Tecla control presionada!")
+	}
+}
+</script>
+
+</head>
+
+<body>
+<form id="form1" name="form1">
+<p>
+	<label for="nombre">Nombre Completo:</label>
+    
+    <input type="text" name="nombre" id="nombre" 
+    onkeydown="alert('Evento onkeydown');" 
+    onkeypress="alert('Evento onkeypress');"
+    onkeyup="mostrarTecla(event);"/>
+</p>
+<p>
+	<input type="submit" name="button" id="button" value="Enviar" />
+</p>
+</form>
+</body>
+</html>

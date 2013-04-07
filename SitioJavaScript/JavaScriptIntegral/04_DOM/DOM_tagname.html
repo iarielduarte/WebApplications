@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Trayendo elementos por tipo - JavaScript</title>
+
+<style type="text/css">
+.par{
+	background-color:#6633FF
+}
+
+.impar{
+	background-color:#CCC
+}
+</style>
+
+<script type="text/javascript">
+	function estiloTabla(){
+		var tabla = document.getElementById("tabla");
+		var celdas = tabla.getElementsByTagName("tr");
+		for (var i=0; i<celdas.length; i++){
+			if(i%2==0){
+				celdas[i].className="par";	
+			}else{
+				celdas[i].className="impar";
+			}
+		}
+	}
+</script>
+</head>
+
+<body onLoad="estiloTabla()">
+<table width="200" border="1" cellspacing="1" id="tabla">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mostrar y Ocultado - JavaScript</title>
+<style type="text/css">
+#contenedor {
+	width:200px;
+	height:200px;
+	background-color:yellow;
+	display:block;
+}
+</style>
+<script type="text/javascript">
+	function apagar(){
+		var contenedor = document.getElementById("contenedor");
+		//contenedor.style.visibility="hidden";
+		contenedor.style.display="none";	
+	}
+	
+	function prender(){
+		var contenedor = document.getElementById("contenedor");
+		//contenedor.style.visibility="visible";	
+		contenedor.style.display="block";	
+	}
+	
+	function interruptor(){
+		var contenedor = document.getElementById("contenedor");
+		var interruptor =  document.getElementById("interruptor");
+		var cb = document.getElementById("cbswinch");;
+		if(contenedor.style.display=="block" || contenedor.style.display==""){
+			apagar();
+			interruptor.value="On"	
+			cb.checked="";
+		}else{
+			prender();	
+			interruptor.value="Off"	
+			cb.checked="checked";
+		}
+		
+	}
+</script>
+
+</head>
+
+<body>
+<input type="checkbox" id="cbswinch" checked="checked" onChange="interruptor()" /> Visible
+<div id="contenedor">
+</div>
+<input type="button" value="Apagar" onClick="apagar()">
+<input type="button" value="Prender" onClick="prender()">
+<input type="button" Value="Off" onClick="interruptor()" id="interruptor">
+
+</body>
+</html>

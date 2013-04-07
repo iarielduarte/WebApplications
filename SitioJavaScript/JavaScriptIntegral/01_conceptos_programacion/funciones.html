@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Funciones - JavaScript</title>
+</head>
+
+<body>
+<script type="text/javascript">
+//Declaracion de funcion
+function mosrarMensaje(){
+	document.write("Es es un mensaje");
+}
+
+//Function con parametros
+function elegirColores(mensaje, color){
+	if(color=="rojo"){
+		document.write("<p style='color: red'>"+mensaje+"</p>");	
+	}else{
+		document.write("<p style='color: blue'>"+mensaje+"</p>");	
+	}
+}
+
+//Function que retorna valor
+function calcularDescuento(precio, descuento) {
+	var final = precio * descuento /100;
+	return final;	
+}
+
+var total = 100;
+total = total - calcularDescuento(total, 15);
+document.write(total);
+
+//Invocar a la function
+elegirColores("Esta es una prueba","dd");
+mosrarMensaje();
+</script>
+
+</body>
+</html>

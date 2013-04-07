@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DOM - JavaScript</title>
+<script type="text/javascript">
+
+function inicializar(){
+	var link = document.getElementById("linkb");
+	var caja =document.getElementById("caja");
+	
+	if(link.target == "_blank"){
+		alert("El link se abre en una nueva ventana");
+	}
+	
+	link.href = "http://www.google.com.ar";
+	
+	function cambiar(){
+		document.getElementById("linkb").href="http://taringa.com";
+	}
+	
+	//Podemos cambiar el estilo css//
+	caja.style.backgroundColor = "red";
+	caja.style.height = "200px";
+	caja.style.border = "1px solid black";
+}
+	
+	
+</script>
+</head>
+
+<body onLoad="inicializar()">
+<h2>Trayendo elementos por identificador</h2>
+
+<div id="caja" onMouseOver="this.style.backgroundColor='white'" onMouseOut="this.style.backgroundColor='red'">
+
+	<a id="linkb" target="_blank">Link para la web</a>
+    <input type="button" onClick="cambiar()" value="Cambiar Link">
+</div>
+
+</body>
+</html>

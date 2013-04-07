@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cambiando clases - JavaScript</title>
+<script type="text/javascript">
+function enfoque(input){
+	input.className='enfoco'
+}
+
+function desenfonque(input){
+	input.className=''
+}
+</script>
+<style type="text/css">
+input {
+	border:1px solid #0000FF;
+	background-color: #69F;
+	height: 20px;
+	}
+	
+input.enfoco {
+	background-color:#6FF;
+	border:1px solid #FF0;
+	
+	}
+.caja {
+	border:1px solid #666;
+	padding: 10px
+	}
+</style>
+</head>
+
+<body onLoad="document.getElementById('caja').className='caja'">
+<h2>Cambio de clases CSS</h2>
+<div id="caja">
+<label>
+Nombre : <input type="text" id="txtnombre" onFocus="enfoque(this)" onBlur="desenfonque(this)"/>
+</label>
+<br>
+<br>
+
+<label>
+Apellido : <input type="text" id="txtapellido" onFocus="enfoque(this)" onBlur="desenfonque(this)"/>
+</label>
+</div>
+</body>
+</html>

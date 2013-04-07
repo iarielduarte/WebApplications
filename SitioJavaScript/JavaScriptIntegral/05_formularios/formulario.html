@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Formulario de Registro</title>
+<script type="text/javascript" src="form.js"></script>
+<style type="text/css">
+form {
+		width:300px;
+		margin:auto;
+	}	
+	
+label {
+		width:200px;
+		display:block;
+		margin:10px;
+		float:left;
+	}
+	
+ul	{
+		list-style:none;
+		margin:0px;	
+	}
+	
+li		{
+		margin:0px;	
+		padding:0px;
+		height:80px;	
+		}
+input[type=text], select {
+		width:200px;
+		float:left;
+		}
+button {
+		display:block;
+		clear: both;
+		margin-left:200px;
+		}
+
+.enfoco {
+		background-color: #9CF;
+		border: 1px solid green;
+		}
+		
+.ayuda {
+		font-size:x-small;
+		color:#F90;
+	}
+</style>
+</head>
+
+<body>
+<form>
+<ul>
+<li>
+<label for="nombre">Nombre</label>
+<input type="text" id="nombre" name="nombre" onFocus="recibeFoco(this)" onBlur="pierdeFoco(this)"/>
+</li>
+<li>
+<label for="direccion">Direccion</label>
+<input type="text" id="direccion" name="direccion" onFocus="recibeFoco(this)" onBlur="pierdeFoco(this)"/>
+</li>
+<li>
+<label for="edad">Edad</label>
+<input type="text" id="edad" name="edad" onFocus="recibeFoco(this)" onBlur="pierdeFoco(this)"/>
+</li>
+<li>
+<label for="mail">Email</label><br>
+<input type="text" id="mail" name="mail" onFocus="recibeFoco(this)" onBlur="pierdeFoco(this)"/>
+</li>
+<li>
+<label for="estado">Estado Civil</label>
+<select id="estado" name="estado" onFocus="recibeFoco(this)" onBlur="pierdeFoco(this)">
+	<option>Seleccione</option>
+    <option>Casado</option>
+    <option>Soltero</option>
+    <option>Divorciado</option>
+</select>
+
+</li>
+<li>
+<input type="checkbox" id="acepto" value="SI" />Aceptar Condiciones
+</li>
+</ul>
+<button>Registrarme</button>
+</form>
+</body>
+</html>

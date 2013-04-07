@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Fechas - JavaScript</title>
+</head>
+
+<body>
+<script type="text/javascript">
+var fecha = new Date();
+var dia = fecha.getDate();
+var mes = fecha.getMonth();
+var anio = fecha.getFullYear();
+//Fecha corta
+document.write("Hoy es :"+ dia +"/"+ mes +"/"+ anio);
+
+//Fecha larga
+var nombreMes;
+switch (mes){
+	case 1:
+		nombreMes = 'Enero';
+		break;
+	case 2:
+		nombreMes = 'Febrero';
+		break;
+	case 3:
+		nombreMes = 'Marzo';
+		break;
+	case 4:
+		nombreMes = 'Abril';
+		break;
+	case 5:
+		nombreMes = 'Mayo';
+		break;
+	case 6:
+		nombreMes = 'Junio';
+		break;
+	case 7:
+		nombreMes = 'Julio';
+		break;
+	case 8:
+		nombreMes = 'Agosto';
+		break;
+	case 9:
+		nombreMes = 'Septiembre';
+		break;
+	case 10:
+		nombreMes = 'Octubre';
+		break;
+	case 11:
+		nombreMes = 'Noviembre';
+		break;
+	case 12:
+		nombreMes = 'Diciembre';
+		break;
+}
+
+document.write("Hoy es :"+ dia +"/"+ nombreMes +"/"+ anio);
+
+//Fecha larga con vector
+var meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
+document.write("Hoy es :"+ dia +"/"+ meses[mes] +"/"+ anio);
+</script>
+
+</body>
+</html>

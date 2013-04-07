@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Eventos - JavaScript</title>
+<script type="text/javascript">
+	function mensaje(){
+		alert("Evento de click en javascript");	
+	}
+	
+	function calculaImpuesto(precio){
+		return precio * 15 / 100;
+	}
+</script>
+
+</head>
+
+<body>
+<h1>Introduccion a los eventos en JavaScript</h1>
+<input type="button" id="boton" name="boton" value="Aceptar" onClick="mensaje();"/>
+
+<a href="javascript:alert(calculaImpuesto(100))">Calcula impuesto</a>
+
+</body>
+</html>
+ 
