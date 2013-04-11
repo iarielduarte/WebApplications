@@ -1,10 +1,140 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Documento sin título</title>
-</head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-<body>
-</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(e) {
+       $("select").change(cambiacss)
+    });
+	
+	function cambiacss(){
+		var plantilla = $("select").val();
+		$("plantilla").html('<link rel="stylesheet" href="css/'+plantilla+'.css" type="text/css">');
+	}
+	
+</script>
+
+<link rel="stylesheet" href="css/base.css" type="text/css">
+<plantilla>
+
+</plantilla>
+
+</head>
+    <body>
+    	<select name="plantilla">
+        	<option value="">Selecciona una plantilla</option>
+            <option value="pc1">Plantilla para PC</option>
+            <option value="pchd">Plantilla para HD</option>
+            <option value="movil">Plantilla para Mobile</option>
+            <option value="tablet">Plantilla para Tablet</option>
+        </select>
+        <hr>
+        <div id="contenedor">
+          <!-- Comienzo de cabecera-->
+            <header>
+            	<div id="titulo">
+                	<div id="logo"></div>
+                    <h1>Synergy Apps</h1>
+                    <h3>Soluciones IT</h3>
+                  </div>
+                <nav>
+                	<ul>
+                    	<li>
+                        	<a href="index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">Blog</a>
+                        </li>
+                        <li>
+                            <a href="producto.html">Servicios</a>
+                        </li>
+                        <li>
+                            <a href="contacto.html">Contactos</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <!--Fin de cabecera-->
+            
+            <!--Cominezo del contenido-->
+            <section>
+            	<div id="articulos">
+                	<article>
+                    	<h3>Reset CSS para HTML5</h3>
+                        <p>Jugando un poco con CSS3 y HTML5 he encontrado este reset CSS para HTML5, muy útil para lograr la tan ansiada compatibilidad entre navegadores.
+
+Este reset, a parte de lo que hacen los reset más tradicionales, como el famoso de Eric Meyer (en el cual se basa), incluye etiquetas de HTML5 para asegurarnos de maximizar el soporte de este lenguaje en diferentes navegadores.</p>
+                        <div class="imagenarticuloblog"></div>
+                    </article>
+                    
+                    <article>
+                    	<h3>Magento Mobile, su lanzamiento oficial</h3>
+                        <p>Hoy han presentado Magento mobile, la aplicación para montar tiendas online de Magento para móviles.
+
+Hace un par de meses que se anunción algo al respecto pero no tuvo mucha repercusión, ahora lanzan oficialmente esta aplicación nativa para el iPhone que aseguran, a finales de año también estará disponible para iPad y Android.</p>
+                        <div class="imagenarticuloblog"></div>
+                    </article>
+                    
+                     <article>
+                    	<h3>Correos electrónicos prioritarios con Gmail</h3>
+                        <p>Acabo de activar la nueva función proritarios de Gmail, que supuestamente me va a hacer la vida más fácil ordenando automáticamente mi correo de más a menos importante, para saber de un vistazo a qué contestar primero sin volverme loca entre tanto mensaje.</p>
+                        <div class="imagenarticuloblog"></div>
+                    </article>
+                    
+                     <article>
+                    	<h3>Problema en ie7 – ie6 con text-indent en inputs, submit buttons</h3>
+                        <p>Es frecuente usar imágenes de fondo para dar estilo a los botones de un formulario. Cuando se hace esto, se suele despejar el botón de texto mediante la propiedad text-indent, dando márgenes negativos al texto de forma que deja de ser visible en pantalla.</p>
+                        <div class="imagenarticuloblog"></div>
+                    </article>
+                    
+                     <article>
+                    	<h3>Servicios de Hosting Compartido de SingularWeb</h3>
+                        <p>En esta ocasión voy a analizar los servicios de la empresa de hosting singular web. SingularWeb es una empresa española ubicada en Barcelona que se fundó en el año 1999, y desde entonces llevan más de 10 años ofreciendo servicios de hosting y dominios a otras empresas y particulares.</p>
+                        <div class="imagenarticuloblog"></div>
+                    </article>
+                    
+                     <article>
+                    	<h3>Hacer Tabs (pestañas) con jQuery y CSS</h3>
+                        <p>Hoy he publicado en la sección de artículos de LaWebera.es un tutorial donde explico como hacer tabs o pestañás usando CSS y jQuery, un efecto muy útil para estructurar la información de una web de forma ordenada o crear menús de navegación. El efecto que se explica en el ejemplo es este:</p>
+                        <div class="imagenarticuloblog"></div>
+                    </article>
+                    
+                     <article>
+                    	<h3>Comprimir el CSS y el JavaScript de tu página web para hacerla más rápida</h3>
+                        <p>Una técnica muy útil cuando diseñamos páginas web que requieren el uso de JavaScript, o que por motivos de diseño necesitan más de una Hoja de Estilos, es minificar el código, en ingles minify.</p>
+                        <div class="imagenarticuloblog"></div>
+                    </article>
+                    
+                    
+                </div>
+                <aside>
+                	<div id="archivo">
+                    	<h3>Archivo</h3>
+                    	<ul>
+                        	<li><a href="">Dicembre 2012</a></li>
+                            <li><a href="">Enero 2013</a></li>
+                            <li><a href="">Febrero 2013</a></li>
+                            <li><a href="">Marzo 2013</a></li>
+                            <li><a href="">Abril 2013</a></li>
+                        </ul>
+                    </div>
+                    <div id="sobre">
+                    <h3>Sobre este blog: Comprimir el CSS y el JavaScript de tu página web para hacerla más rápida</h3>
+                    	<p>Una técnica muy útil cuando diseñamos páginas web que requieren el uso de JavaScript, o que por motivos de diseño necesitan más de una Hoja de Estilos, es minificar el código, en ingles minify.</p>
+                    </div>
+                </aside>
+                
+            </section>
+           <!-- Fin del contenido-->
+            
+            <!--Cominezo del pie de pagina-->
+            <footer>
+            	 <h6>Ariel Duarte ©2013</h6>
+            </footer>
+             <!-- Fin del pie de pagina-->
+        </div>
+    </body>
 </html>
+ 

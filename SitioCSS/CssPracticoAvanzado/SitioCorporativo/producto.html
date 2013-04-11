@@ -1,10 +1,134 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Documento sin título</title>
-</head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-<body>
-</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(e) {
+       $("select").change(cambiacss)
+    });
+	
+	function cambiacss(){
+		var plantilla = $("select").val();
+		$("plantilla").html('<link rel="stylesheet" href="css/'+plantilla+'.css" type="text/css">');
+	}
+	
+</script>
+
+<link rel="stylesheet" href="css/base.css" type="text/css">
+<plantilla>
+
+</plantilla>
+
+</head>
+    <body>
+    	<select name="plantilla">
+        	<option value="">Selecciona una plantilla</option>
+            <option value="pc1">Plantilla para PC</option>
+            <option value="pchd">Plantilla para HD</option>
+            <option value="movil">Plantilla para Mobile</option>
+            <option value="tablet">Plantilla para Tablet</option>
+        </select>
+        <hr>
+        <div id="contenedor">
+          <!-- Comienzo de cabecera-->
+            <header>
+            	<div id="titulo">
+                	<div id="logo"></div>
+                    <h1>Synergy Apps</h1>
+                    <h3>Soluciones IT</h3>
+                  </div>
+                <nav>
+                	<ul>
+                    	<li>
+                        	<a href="index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">Blog</a>
+                        </li>
+                        <li>
+                            <a href="producto.html">Servicios</a>
+                        </li>
+                        <li>
+                            <a href="contacto.html">Contactos</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <!--Fin de cabecera-->
+            
+            <!--Cominezo del contenido-->
+            <section>
+            	<article class="artportafolio" id="portal">
+                	<h3>Desarrollo Agil de Software:</h3>
+                    <p>Mayor Productividad y Capacidad de respuesta a los cambios basado en el principio Delivery continuo en plazos pequeños y acotados.</p>
+                    <div id="imagen"></div>
+                </article>
+                <article class="artportafolio" id="porta2">
+                <h3>Desarrollo Agil de Software:</h3>
+                    <p>Mayor Productividad y Capacidad de respuesta a los cambios basado en el principio Delivery continuo en plazos pequeños y acotados.</p>
+                    <div id="imagen"></div>
+                </article>
+                <article class="artportafolio" id="porta3">
+                <h3>Desarrollo Agil de Software:</h3>
+                    <p>Mayor Productividad y Capacidad de respuesta a los cambios basado en el principio Delivery continuo en plazos pequeños y acotados.</p>
+                    <div id="imagen"></div>
+                </article>
+                <article class="artportafolio" id="porta4">
+                <h3>Desarrollo Agil de Software:</h3>
+                    <p>Mayor Productividad y Capacidad de respuesta a los cambios basado en el principio Delivery continuo en plazos pequeños y acotados.</p>
+                    <div id="imagen"></div>
+                </article>
+                <article class="artportafolio" id="porta5">
+                	<h3>Desarrollo Agil de Software:</h3>
+                    <p>Mayor Productividad y Capacidad de respuesta a los cambios basado en el principio Delivery continuo en plazos pequeños y acotados.</p>
+                    <div id="imagen"></div>
+                </article>
+                <article class="artportafolio" id="porta6">
+                <h3>Desarrollo Agil de Software:</h3>
+                    <p>Mayor Productividad y Capacidad de respuesta a los cambios basado en el principio Delivery continuo en plazos pequeños y acotados.</p>
+                    <div id="imagen"></div>
+                </article>
+                <article class="artportafolio" id="porta7">
+                <h3>Desarrollo Agil de Software:</h3>
+                    <p>Mayor Productividad y Capacidad de respuesta a los cambios basado en el principio Delivery continuo en plazos pequeños y acotados.</p>
+                    <div id="imagen"></div>
+                </article>
+                <article class="artportafolio" id="porta8">
+                <h3>Desarrollo Agil de Software:</h3>
+                    <p>Mayor Productividad y Capacidad de respuesta a los cambios basado en el principio Delivery continuo en plazos pequeños y acotados.</p>
+                    <div id="imagen"></div>
+                </article>
+                 <article class="artportafolio" id="porta9">
+                <h3>Desarrollo Agil de Software:</h3>
+                    <p>Mayor Productividad y Capacidad de respuesta a los cambios basado en el principio Delivery continuo en plazos pequeños y acotados.</p>
+                    <div id="imagen"></div>
+                </article>
+                 <article class="artportafolio" id="porta10">
+                <h3>Desarrollo Agil de Software:</h3>
+                    <p>Mayor Productividad y Capacidad de respuesta a los cambios basado en el principio Delivery continuo en plazos pequeños y acotados.</p>
+                    <div id="imagen"></div>
+                </article>
+                <article class="artportafolio" id="porta11">
+                <h3>Desarrollo Agil de Software:</h3>
+                    <p>Mayor Productividad y Capacidad de respuesta a los cambios basado en el principio Delivery continuo en plazos pequeños y acotados.</p>
+                    <div id="imagen"></div>
+                </article>
+                <article class="artportafolio" id="porta12">
+                <h3>Desarrollo Agil de Software:</h3>
+                    <p>Mayor Productividad y Capacidad de respuesta a los cambios basado en el principio Delivery continuo en plazos pequeños y acotados.</p>
+                    <div id="imagen"></div>
+                </article>
+            </section>
+           <!-- Fin del contenido-->
+            
+            <!--Cominezo del pie de pagina-->
+            <footer>
+            	 <h6>Ariel Duarte ©2013</h6>
+            </footer>
+             <!-- Fin del pie de pagina-->
+        </div>
+    </body>
 </html>
+ 

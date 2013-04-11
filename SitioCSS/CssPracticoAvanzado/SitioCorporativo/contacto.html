@@ -1,10 +1,87 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Documento sin título</title>
-</head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-<body>
-</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(e) {
+       $("select").change(cambiacss)
+    });
+	
+	function cambiacss(){
+		var plantilla = $("select").val();
+		$("plantilla").html('<link rel="stylesheet" href="css/'+plantilla+'.css" type="text/css">');
+	}
+	
+</script>
+
+<link rel="stylesheet" href="css/base.css" type="text/css">
+<plantilla>
+
+</plantilla>
+
+</head>
+    <body>
+    	<select name="plantilla">
+        	<option value="">Selecciona una plantilla</option>
+            <option value="pc1">Plantilla para PC</option>
+            <option value="pchd">Plantilla para HD</option>
+            <option value="movil">Plantilla para Mobile</option>
+            <option value="tablet">Plantilla para Tablet</option>
+        </select>
+        <hr>
+        <div id="contenedor">
+          <!-- Comienzo de cabecera-->
+            <header>
+            	<div id="titulo">
+                	<div id="logo"></div>
+                    <h1>Synergy Apps</h1>
+                    <h3>Soluciones IT</h3>
+                  </div>
+                <nav>
+                	<ul>
+                    	<li>
+                        	<a href="index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">Blog</a>
+                        </li>
+                        <li>
+                            <a href="producto.html">Servicios</a>
+                        </li>
+                        <li>
+                            <a href="contacto.html">Contactos</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <!--Fin de cabecera-->
+            
+            <!--Cominezo del contenido-->
+            <section>
+            	<h3>Formulario de Contacto</h3>
+                <p>Si desea ponerse en contacto con nosotros rellene este formulario:</p>
+            	<form method="post" action="procesaformulario.php">
+                	<div class="formleyenda">Nombre:</div>
+                    <input type="text" name="nombre">
+                    <div class="formleyenda">Correo Electronico:</div>
+                    <input type="text" name="correo">
+                   <div class="formleyenda"> Mensaje:</div>
+                    <textarea name="mensaje"></textarea>
+                    <br>
+					<input type="submit" value="Enviar"> 
+                </form>
+                
+            </section>
+           <!-- Fin del contenido-->
+            
+            <!--Cominezo del pie de pagina-->
+            <footer>
+            	 <h6>Ariel Duarte ©2013</h6>
+            </footer>
+             <!-- Fin del pie de pagina-->
+        </div>
+    </body>
 </html>
+ 
