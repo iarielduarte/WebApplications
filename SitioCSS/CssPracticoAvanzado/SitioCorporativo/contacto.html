@@ -18,7 +18,10 @@
 
 <link rel="stylesheet" href="css/base.css" type="text/css">
 <plantilla>
-
+	<link rel="stylesheet" href="css/movil.css" type="text/css" media="screen and (max-width:400px) and (min-width:1px)">
+    <link rel="stylesheet" href="css/tablet.css" type="text/css" media="screen and (max-width:680px) and (min-width:401px)">
+    <link rel="stylesheet" href="css/pchd.css" type="text/css" media="screen and (max-width:1200px) and (min-width:681px)">
+    <link rel="stylesheet" href="css/pc1.css" type="text/css" media="screen and (max-width:3600px) and (min-width:1201px)">
 </plantilla>
 
 </head>
@@ -37,8 +40,9 @@
             	<div id="titulo">
                 	<div id="logo"></div>
                     <h1>Synergy Apps</h1>
-                    <h3>Soluciones IT</h3>
+                     <h2>Solution IT with smart apps</h2>
                   </div>
+                   <div style="clear:both;"></div>
                 <nav>
                 	<ul>
                     	<li>
@@ -55,25 +59,28 @@
                         </li>
                     </ul>
                 </nav>
+                 <div style="clear:both;"></div>
             </header>
             <!--Fin de cabecera-->
             
             <!--Cominezo del contenido-->
-            <section>
-            	<h3>Formulario de Contacto</h3>
-                <p>Si desea ponerse en contacto con nosotros rellene este formulario:</p>
-            	<form method="post" action="procesaformulario.php">
-                	<div class="formleyenda">Nombre:</div>
-                    <input type="text" name="nombre">
-                    <div class="formleyenda">Correo Electronico:</div>
-                    <input type="text" name="correo">
-                   <div class="formleyenda"> Mensaje:</div>
-                    <textarea name="mensaje"></textarea>
-                    <br>
-					<input type="submit" value="Enviar"> 
-                </form>
-                
+           <section>
+            	<div id="contieneformulario">
+                    <h3>Formulario de Contacto</h3>
+                    <p>Si desea ponerse en contacto con nosotros rellene este formulario:</p>
+                    <form method="post" action="procesaformulario.php">
+                        <div class="formleyenda">Nombre:</div>
+                        <input type="text" name="nombre" id="nombre">
+                        <div class="formleyenda">Correo Electronico:</div>
+                        <input type="text" name="correo" id="correo">
+                       <div class="formleyenda"> Mensaje:</div>
+                        <textarea name="mensaje"></textarea>
+                        <br>
+                        <input type="submit" value="Enviar" id="botonenviar"> 
+                    </form>
+              </div>  
             </section>
+             <div style="clear:both;"></div>
            <!-- Fin del contenido-->
             
             <!--Cominezo del pie de pagina-->

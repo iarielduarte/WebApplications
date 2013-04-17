@@ -1,8 +1,144 @@
 @charset "utf-8";
 /* CSS para el template tablet digital */
-body 
+
+/*http://www.google.com/fonts/*/
+@import url(http://fonts.googleapis.com/css?family=Actor);
+
+
+body, html
 {
-	background: #FF6;
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
 }
 
+header
+{
+	width:33%;
+	height:100%;
+	float:left;
+}
 
+section
+{
+	width:100%;
+	height:100%;	
+	position:relative;
+	top:100px;
+}
+
+#contenedor
+{
+	width:100%;
+	height:100%; 	
+}
+
+#titulo
+{
+	width:600px;
+	height:100px;
+	position:absolute;
+	margin:0px;
+	padding:0px;	
+}
+
+h1, h2, h3, h4, h5, h6, p
+{
+	padding:0px;
+	margin:0px;	
+}
+
+h1{
+	font-family: 'Actor', sans-serif;
+	font-size:50px;	
+	color:white;
+	text-shadow:0px 4px 8px rgba(0,0,0,20);
+
+}
+
+h2{
+	font-family: 'Actor', sans-serif;	
+	font-style:italic;
+	font-weight:normal;
+	font-size:10;
+	position:relative;
+	top:-00px;
+	left:20px;
+}
+
+nav
+{
+	margin-top:110px;	
+	border:0px solid black;
+	width:90%;
+	height:55%;
+	box-shadow:-25px 0px 50px rgba(0,0,0,0.2) inset;
+}
+
+nav ul
+{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;	
+	
+}
+
+nav ul li
+{
+	width:92%;
+	border-bottom:1px solid grey;
+	height:50px;
+	padding-top:20px;
+	padding-left:10px;
+	font-size:24px;
+	text-transform:capitalize;	
+}
+
+nav ul li a
+{
+	color:black;
+	text-decoration:none;	
+}
+
+.imagendescatado
+{
+	width:200px;
+	height:100px;
+	background:grey;
+	float:left;
+	margin-right:10px;
+	margin-top:30px;
+
+}
+
+#img1
+{
+	background:url(../img/mobilweb.jpg);	
+	background-size:100% 100%;	
+}
+
+#img2
+{
+	background:url(../img/agil.png);	
+	background-size:100% 100%;	
+}
+
+#img3
+{
+	background:url(../img/webdevelopment.png);	
+	background-size:100% 100%;	
+}
+
+#logo
+{
+	height:100px;
+	width:100px;
+	background:url(../img/logo.png);
+	background-size:100% 100%;
+	float:left;
+	margin-right:20px;
+	margin-bottom:20px;
+	
+}

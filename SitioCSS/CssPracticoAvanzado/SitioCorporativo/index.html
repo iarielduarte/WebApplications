@@ -6,7 +6,23 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(e) {
-       $("select").change(cambiacss)
+       $("select").change(cambiacss);
+	  
+	  /* if(window.innerWidth < 400 && navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/Android/i)){
+		   $("planilla").html(' <link rel="stylesheet" href="css/movil.css" type="text/css">');
+	   }
+	   
+	    if(window.innerWidth >= 400 && window.innerWidth < 600 && navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Android/i)){
+		   $("planilla").html(' <link rel="stylesheet" href="css/tablet.css" type="text/css">');
+	   }
+	   
+	   if(window.innerWidth >= 600 && window.innerWidth < 1200){
+		   $("planilla").html(' <link rel="stylesheet" href="css/pc1.css" type="text/css">');
+	   }
+	   
+	    if(window.innerWidth >= 1200 && window.innerWidth < 2400){
+		   $("planilla").html(' <link rel="stylesheet" href="css/pchd.css" type="text/css">');
+	   }*/
     });
 	
 	function cambiacss(){
@@ -14,11 +30,15 @@
 		$("plantilla").html('<link rel="stylesheet" href="css/'+plantilla+'.css" type="text/css">');
 	}
 	
+	
 </script>
 
 <link rel="stylesheet" href="css/base.css" type="text/css">
 <plantilla>
-	<link rel="stylesheet" href="css/pc1.css" type="text/css">
+	<link rel="stylesheet" href="css/movil.css" type="text/css" media="screen and (max-width:400px) and (min-width:1px)">
+    <link rel="stylesheet" href="css/tablet.css" type="text/css" media="screen and (max-width:680px) and (min-width:401px)">
+    <link rel="stylesheet" href="css/pchd.css" type="text/css" media="screen and (max-width:1200px) and (min-width:681px)">
+    <link rel="stylesheet" href="css/pc1.css" type="text/css" media="screen and (max-width:3600px) and (min-width:1201px)">
 </plantilla>
 
 </head>
@@ -39,7 +59,7 @@
                     </div>
                    
                     <h1>Synergy Apps</h1>
-                    <h3>Soluciones IT</h3>
+                    <h2>Solution IT with smart apps</h2>
                   </div>
                     <div style="clear:both;"></div>
                 <nav>
@@ -64,25 +84,25 @@
             
             <!--Cominezo del contenido-->
             <section>
-            	<div id="banner">
+            	<div id="banner" contenteditable="true">
                 	<div id="contienebanner">
                 	<h3>BANNER</h3>
                     <p>El continuo desarrollo de productos y servicios de tecnología de la información, con un férreo compromiso en la utilización de modernos procesos de Ingeniería de Software para la formulación, evaluación y desarrollo de proyectos de IT. </p>
                		</div>
                 </div>
                 
-                <article>
-                	<div id="contienearticulo">
+                <article contenteditable="true">
+                	<div class="contienearticulo" id="primerarticulo">
                         <div class="imagendescatado" id="img1"></div>
-                        <h3>¿QUIENES SOMOS?</h3>
+                        <h3>MOBILE</h3>
                         <p>SYNERGY APPS es una empresa dedicada al desarrollo de software, acreditación de aplicaciones (testing) y calidad. Fundada por Ariel Duarte el año 2013, dedicada a brindar soluciones, productos y servicios de IT a corporaciones y gobiernos basados en estrictas normas y modelos de calidad.</p>
                  	</div>       
                 </article>
                 
-                <article>
-                	<div id="contienearticulo">
-                        <div class="imagendescatado" id="img1"></div>
-                        <h3>MISION Y VISION</h3>
+                <article contenteditable="true">
+                	<div class="contienearticulo">
+                        <div class="imagendescatado" id="img2"></div>
+                        <h3>AGIL</h3>
                         <p>La Visión de la Empresa es ser reconocida y referente por la Calidad de sus Productos y Servicios, ante sus clientes, empleados, accionistas, proveedores y la comunidad regional, Nacional e Internacional”.
     
     “Tenemos por Misión proveer Tecnología de Máxima utilidad para nuestros Clientes y la Comunidad, en la cual ellos operan, fundamentada en un Factor Humano Alta y Permanentemente Desarrollado”.</p>
@@ -90,21 +110,23 @@
                 	</div>
                 </article>
                 
-                <article>
-                	<div id="contienearticulo">
-                        <div class="imagendescatado" id="img1"></div>
-                       		<h3>¿PORQUE ELEGIRNOS?</h3>
+                <article contenteditable="true">
+                	<div class="contienearticulo" id="tecerarticulo">
+                        <div class="imagendescatado" id="img3"></div>
+                       		<h3>WEB</h3>
                             <p>Contamos con experiencia Nacional e Internacional.
         Nuestro Staff posee los conocimientos necesarios para la ejecución de proyectos de cualquier característica Trabajamos con Calidad, nuestra madurez y amplio conocimiento en la implementación de Modelos de Calidad certificados por Estándares Internacionales y en la aplicación de Metodologías Agiles nos permite trabajar bajo la premisa de “selección de las mejores prácticas de trabajo” para cada uno de los negocios que emprendemos.</p>
                		</div>
                 </article>
-                
-            </section>
+           </section>
+            <div style="clear:both;"></div>
            <!-- Fin del contenido-->
             
             <!--Cominezo del pie de pagina-->
+           
             <footer>
-            	 <h6>Ariel Duarte ©2013</h6>
+              
+            	 <h4>Ariel Duarte ©2013</h4>          
                  <h6>Todos los derechos reservado del autor.</h6>
             </footer>
              <!-- Fin del pie de pagina-->
