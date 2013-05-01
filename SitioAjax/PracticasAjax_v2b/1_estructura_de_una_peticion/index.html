@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Estructura de Ajax</title>
+<script type="text/javascript">
+	
+	function ejecutarajax(){
+		/*Creacion del objeto de conexion*/
+		var conexion;
+		//En el caso de que usemos una version desactualizada IExplorer
+		if(window.XMLHttpRequest){
+			conexion = new XMLHttpRequest();
+		}else{
+			conexion = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		/*Se comprueba el estado de la conexion con el objeto onreadystatechange*/
+		//ReadySate:
+		//0: la peticion no se ha inicializdo
+		//1: conexion con el servidor establecida
+		//2: peticion recibida
+		//3: procesando peticion
+		//4: peticion finalizada y la respuesta esta lista
+		//Status:
+		//200: OK
+		//404: Pagina no encontrada
+		conexion.onreadystatechange=function(){
+			if(conexion.readyState==4 && conexion.status==200){
+				/*Obtener la respues del Servidor*/
+				document.getElementById("midiv").innerHTML = conexion.responseText;
+			}
+		}
+		/*Apertura y envio de peticion */
+		
+		//GET y POST : Para envio de datos de formularios usaremos POST y en este caso GET
+		//porque es solo para recuperar informacion de un archivo
+		//El tercer parametro indica si la peticion es asincronica o sincronica "true" es 	asincronico
+		//y el mas recomendable para evitar coaliciones entre el servidor y el cliente porque soporta 
+		//mas cantidad de peticiones
+		conexion.open("GET","ejemplo.txt",true);
+		conexion.send();//envia la peticion
+	
+	}
+</script>
+</head>
+
+<body>
+<div id="midiv"></div>
+<button type="button" onClick="ejecutarajax()">EJECUTAR AJAX</button>
+</body>
+</html>

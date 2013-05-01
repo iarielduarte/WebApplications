@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Codigo XML con Ajax</title>
+<script type="text/javascript">
+	
+	function cargaxml(){
+		/*Creacion del objeto de conexion*/
+		var conexion;
+		var txt,x,i;
+		//En el caso de que usemos una version desactualizada IExplorer
+		if(window.XMLHttpRequest){
+			conexion = new XMLHttpRequest();
+		}else{
+			conexion = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		/*Se comprueba el estado de la conexion con el objeto onreadystatechange*/
+		conexion.onreadystatechange=function(){
+			if(conexion.readyState==4 && conexion.status==200){
+				/*Obtener la respues del Servidor*/
+				xmlDoc=conexion.responseXML;
+    			txt="<table>";
+				
+				x=xmlDoc.getElementsByTagName("titulo");
+   				artista=xmlDoc.getElementsByTagName("artista");
+    			pais=xmlDoc.getElementsByTagName("pais");
+    			firma=xmlDoc.getElementsByTagName("firma");
+    			precio=xmlDoc.getElementsByTagName("precio");
+    			anio=xmlDoc.getElementsByTagName("anio");
+				
+				for (i=0;i<x.length;i++)
+      				{
+      				txt=txt + "<tr><td>" + x[i].childNodes[0].nodeValue +"</td><td>"+ artista[i].childNodes[0].nodeValue +"</td><td>"+ pais[i].childNodes[0].nodeValue+ "</td><td>"+ firma[i].childNodes[0].nodeValue+ "</td><td>"+ precio[i].childNodes[0].nodeValue+ "</td><td>"+ anio[i].childNodes[0].nodeValue+ "</td></tr>";
+      			 }
+   			 document.getElementById("midiv").innerHTML=txt;
+			}
+		}
+		/*Apertura y envio de peticion */
+		conexion.open("GET","discoteca.xml",true);
+		conexion.send();//envia la peticion
+	
+	}
+</script>
+</head>
+
+<body>
+<h1>Carga XML con AJAX</h1>
+
+<h2>Mi coleccion:</h2>
+
+
+<button type="button" onClick="cargaxml()">Cargar Colecci&oacute;n</button>
+
+<div id="midiv">
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Codigo XML con Ajax</title>
+<script type="text/javascript">
+	
+	function sugerencias(str){
+		var xmlhttp;
+		if(str.length==0){
+			document.getElementById("txtHint").innerHTML="";
+		}
+		
+		//En el caso de que usemos una version desactualizada IExplorer
+		if(window.XMLHttpRequest){
+			xmlhttp = new XMLHttpRequest();
+		}else{
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		/*Se comprueba el estado de la conexion con el objeto onreadystatechange*/
+		xmlhttp.onreadystatechange=function(){
+			if(xmlhttp.readyState==4 && xmlhttp.status==200){
+				/*Obtener la respues del Servidor*/
+				document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+			}
+		}
+		/*Apertura y envio de peticion */
+		 xmlhttp.open("GET","sugerencias.php?q="+str,true);
+		xmlhttp.send();
+	}
+	
+</script>
+</head>
+
+<body>
+<h1>Ejemplo de Ajax con PHP</h1>
+
+<h2>Sugerencias</h2>
+<p>Ingresa un nombre porfavor</p>
+
+<form action="">
+Primer nombre: <input type="text" id="txt1" onkeyup="sugerencias(this.value)">
+</form>
+<p>Sugerencias: <span id="txtHint"></span></p>
+</body>
+</html>

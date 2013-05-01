@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Codigo Php con Ajax</title>
+<script type="text/javascript">
+	
+	function ajaxget(){
+		/*Creacion del objeto de conexion*/
+		var conexion;
+		//En el caso de que usemos una version desactualizada IExplorer
+		if(window.XMLHttpRequest){
+			conexion = new XMLHttpRequest();
+		}else{
+			conexion = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		/*Se comprueba el estado de la conexion con el objeto onreadystatechange*/
+		conexion.onreadystatechange=function(){
+			if(conexion.readyState==4 && conexion.status==200){
+				/*Obtener la respues del Servidor*/
+				document.getElementById("midiv").innerHTML = conexion.responseText;
+			}
+		}
+		/*Apertura y envio de peticion */
+		conexion.open("GET","accion.php?variable=Soy una variable por parametro",true);
+		conexion.send();//envia la peticion
+	
+	}
+</script>
+</head>
+
+<body>
+<div id="midiv"></div>
+<button type="button" onClick="ajaxget()">EJECUTAR AJAX</button>
+</body>
+</html>
