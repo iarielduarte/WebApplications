@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function sugerencias(str){
+				var xmlhttp;
+				if (str.length==0)
+				  { 
+				  document.getElementById("txtHint").innerHTML="";
+				  return;
+				  }
+			  	if (window.XMLHttpRequest)
+				  {
+				  xmlhttp=new XMLHttpRequest();
+				  }
+				else
+				  {
+				  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+				  }
+			  xmlhttp.onreadystatechange=function()
+				  {
+				  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+					 {
+					 document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+					 }
+				  }
+				  xmlhttp.open("GET","validar.php?u="+str,true);
+					xmlhttp.send();
+			}
+		
+		</script>
+	</head>
+	<body>	
+		<h3>Formulario de acceso</h3>
+		<form action="">
+			<p>Elige un usuario: <input type="text" id="txt1" onkeyup="sugerencias(this.value)" style="border:0px solid black;-webkit-box-shadow:0px 0px 15px rgba(0,0,0,0.5);background:rgba(255,255,255,0.95);"/>
+		</form>
+		<div id="txtHint"></div></p>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ajax con Base de Datos</title>
+
+<script type="text/javascript">
+	
+	function muestracliente(str){
+		var xmlhttp;
+		if(str.length==0){
+			document.getElementById("txtHint").innerHTML="";
+		}
+		
+		//En el caso de que usemos una version desactualizada IExplorer
+		if(window.XMLHttpRequest){
+			xmlhttp = new XMLHttpRequest();
+		}else{
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		/*Se comprueba el estado de la conexion con el objeto onreadystatechange*/
+		xmlhttp.onreadystatechange=function(){
+			if(xmlhttp.readyState==4 && xmlhttp.status==200){
+				/*Obtener la respues del Servidor*/
+				document.getElementById("cliente").innerHTML=xmlhttp.responseText;
+			}
+		}
+		/*Apertura y envio de peticion */
+		 xmlhttp.open("GET","db.php?c="+str,true);
+		xmlhttp.send();
+	}
+	
+</script>
+
+</head>
+
+<body>
+<form action="">
+  <select name="clientes" onChange="muestracliente(this.value)">
+    	<option value="">Seleccionar un cliente</option>
+        <option value="Ariel">Ariel</option>
+        <option value="Michelle">Michelle</option>
+        <option value="Janet">Janet</option>
+        <option value="Miguel">Miguel</option>
+    </select>
+</form>
+<div id="cliente">Informaci&oacute;n del Cliente</div>
+</body>
+</html>
