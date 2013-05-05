@@ -1,0 +1,27 @@
+										XMLHttpResques
+									      -------------------
+1. Se utiliza para obtener datos HTTP
+2. Puede ser utilizado para otros datos en formato XML
+3. El objeto almacena un estado, verifica estado requisitos y da respuesta al servidor
+
+- responseXML: Se utiliza cuando un documento retorna un XML.
+- responseText: Utiliza cuando un documento no es un XML.
+- onreadystatechange: Define una funcion que sera llamada para este evento.
+- open: metodo para iniciar una solicitud
+- send: metodo para enviar una solicitud.
+
+Estados readyState:
+--------------------
+0 - Uninitialized: Objeto crado mas no inicializado (Cuando el metodo open no fue invocado).
+1 - Loading: metodo send todavia no fue invocado.
+2 - Loaded: metodo send fue invocado.
+3 - Interactive: datos esta siendo recibidos.
+4 - Completed: toda la informacion esta disponible.
+
+
+HTTP status code:
+--------------------
+200 - OK: Significa que la peticion termino con exito.
+404 - Not found: Significa que un recurso solicitado no fue encontrado.
+400 - Bad request: la peticion es incorrecta o no puede ser solicitada.
+500 - Internal error: El servidor esta con problemas para resolver la peticion 
